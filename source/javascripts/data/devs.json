@@ -1,0 +1,100 @@
+{
+	"jahed": {
+		"links": [
+			{
+				"name": "Jahed's Blog",
+				"iconClass": "fa-home",
+				"url": "http://blog.jahed.io"
+			},
+			{
+				"name": "Jahed's Twitter",
+				"iconClass": "fa-twitter",
+				"url": "https://twitter.com/hedjahead"
+			}
+		]
+	},
+	"mrwilson": {
+		"links": [
+			{
+				"name": "Alex's Blog",
+				"iconClass": "fa-home",
+				"url": "http://probablyfine.co.uk/"
+			},
+			{
+				"name": "Alex's Twitter",
+				"iconClass": "fa-twitter",
+				"url": "https://twitter.com/pr0bablyfine"
+			}
+		]
+	},
+	"vikki": {
+		"links": [
+			{
+				"name": "Vikki's Blog",
+				"iconClass": "fa-home",
+				"url": "http://vikki.github.io/"
+			},
+			{
+				"name": "Vikki's Twitter",
+				"iconClass": "fa-twitter",
+				"url": "https://twitter.com/vikkiread"
+			}
+		]
+	},
+	"tomaslibal": {
+		"links": [
+			{
+				"name": "Tomas's homepage",
+				"iconClass": "fa-home",
+				"url": "http://home.libal.eu"
+			},
+			{
+				"name": "Tomas' Foundry of 0 & 1",
+				"iconClass": "fa-tumblr",
+				"url": "http://foundryof01.tumblr.com"
+			}
+		]
+	},
+	"rachelcdavies": {
+		"links": [
+			{
+				"name": "Thoughts on Agile Coaching",
+				"iconClass": "fa-home",
+				"url": "http://rachelcdavies.github.io/"
+			},
+			{
+				"name": "Rachel's Twitter",
+				"iconClass": "fa-twitter",
+				"url": "https://twitter.com/rachelcdavies"
+			}
+		]
+	},
+	"benjiman": {
+		"links": [
+			{
+				"name": "Benji's Website",
+				"iconClass": "fa-home",
+				"url": "http://benjiweber.co.uk/"
+			},
+			{
+				"name": "Benji's Twitter",
+				"iconClass": "fa-twitter",
+				"url": "https://twitter.com/benjiweber"
+			}
+		]
+	},
+	"timpickles": {
+		"links": [
+			{
+				"name": "8bit Pickles",
+				"iconClass": "fa-home",
+				"url": "http://www.8bitpickles.com/"
+			},
+			{
+				"name": "Tim's Twitter",
+				"iconClass": "fa-twitter",
+				"url": "https://twitter.com/timpickles"
+			}
+		]
+	}
+}

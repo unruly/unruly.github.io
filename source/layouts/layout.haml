@@ -1,0 +1,46 @@
+!!!
+%html{lang:"en-gb"}
+  %head
+    %meta{charset:"utf-8"}
+    %meta{name:"description", content:data.site.description}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+
+    %meta{property:"og:type", content:"website"}
+    %meta{property:"og:site_name", content:data.site.name}
+    %meta{property:"og:image", content:data.site.image}
+    %meta{name:"og:description", content:data.site.description}
+
+    %title= [current_page.data.title, data.site.name].compact.join(" - ")
+
+    %link{rel:"shortcut icon", href:data.site.icon, type:"image/png"}
+    %link{rel:"icon", href:data.site.icon, type:"image/png"}
+    %link{rel:"apple-touch-icon-precomposed", href:data.site.icon, type:"image/png"}
+
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    = stylesheet_link_tag "https://video.cdn-unrulymedia-5.com/ux-guidelines/latest/bootstrap/unruly-bootstrap.min.css"
+    = stylesheet_link_tag "https://video.cdn-unrulymedia-5.com/ux-guidelines/latest/styles/unruly-styles.css"
+    = stylesheet_link_tag "main"
+    - if current_page.data.styles?
+      - current_page.data.styles.each do |style|
+        = stylesheet_link_tag style
+
+%body{class:page_classes}
+
+  = partial "layouts/header"
+
+  = yield
+
+  = partial "layouts/footer"
+
+  = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"
+  = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"
+  = javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"
+  = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js"
+  = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/jQuery.headroom.min.js"
+  = javascript_include_tag "main"
+
+  - if current_page.data.scripts?
+    - current_page.data.scripts.each do |script|
+      = javascript_include_tag script
+
+  = partial "layouts/tracking"

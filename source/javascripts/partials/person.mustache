@@ -1,0 +1,15 @@
+<div class="col-xs-4 col-sm-3">
+    <div class="person">
+        <a href="{{githubUrl}}" title="{{name}}">
+            <img class="img-responsive img-thumbnail" src="{{image}}" />
+        </a>
+        <div class="person-links row">
+            {{#links}}
+                <a href="{{url}}" title="{{name}}"><span class="fa {{iconClass}}"></span></a>
+            {{/links}}
+            <a href="{{githubUrl}}" title="{{name}}'s GitHub">
+                <span class="fa fa-github"></span>
+            </a>
+        </div>
+    </div>
+</div>

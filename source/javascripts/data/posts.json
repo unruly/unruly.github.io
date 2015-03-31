@@ -1,0 +1,9 @@
+{
+  "featuredPost": {
+    "title": "Using ES6 modules in an ES5 RequireJS project",
+    "author": {
+      "name": "Tim Pickles"
+    },
+    "link": "http://www.8bitpickles.com/Using-ES6-modules-in-an-ES5-requireJS-project/"
+  }
+}

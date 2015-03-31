@@ -1,0 +1,22 @@
+%nav.navbar.navbar-default.navbar-fixed-top{ role:"navigation" }
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{ type:"button", data: {toggle:"collapse", target:"#mainNavigation"} }
+        %span.sr-only Toggle navigation
+        %span.fa.fa-bars
+      %a.navbar-brand.unruly-logo{ class: data.header.logo.classname, href:"./" }
+        %img.unruly-logo-icon{ src: data.header.logo.icon }
+        %span.unruly-logo-text= data.header.logo.text
+
+    .navbar-collapse.collapse#mainNavigation
+      %ul.nav.navbar-nav
+        - data.header.links.each do |link|
+          %li{ class: current_page.data.title == link.name ? "active" : nil }
+            = link_to link.url do
+              - if link.icon?
+                %span.fa.fa-fw{class: "fa-#{link.icon}"}
+              %span= link.name
+      %ul.nav.navbar-nav.navbar-right.hidden-xs
+        %li
+          %a.unruly-logo{ href:"http://unruly.co", title:"Unruly" }
+            %img.unruly-logo-icon{ src:"//video.cdn-unrulymedia-5.com/ux-guidelines/latest/images/unruly-logo.svg", alt:"Unruly" }

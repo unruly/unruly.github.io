@@ -1,0 +1,21 @@
+logo:
+  classname: unruly-logo-tech
+  icon: "./images/header-logo.svg"
+  text: "Unruly<strong>Tech</strong>"
+links:
+  - name: Repos
+    url: './#repos'
+
+  - name: Posts
+    url: './#posts'
+
+  - name: Devs
+    url: './#devs'
+
+  - name: Jobs
+    url: './jobs.html'
+    icon: 'suitcase'
+
+  - name: Events
+    url: './events.html'
+    icon: 'calendar'

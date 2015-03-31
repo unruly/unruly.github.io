@@ -1,0 +1,33 @@
+---
+scripts:
+  - index
+---
+
+.container#featuredPost
+  #featuredPostContainer
+
+.container#repos
+  .page-header
+    %h2 Repositories
+  .row#reposContainer
+
+.container#posts
+  .page-header
+    %h2 Latest Posts
+  .row#postsContainer
+
+.container#devs
+  .page-header
+    %h2 Some Unrulies
+  .row
+    .col-md-8
+      .row#devsContainer
+
+    .col-md-4
+      .row
+        - data.teams.teams.each do |team|
+          .col-xs-12
+            .panel.panel-default
+              .panel-body
+                %h4= team.name
+                %p= team.description

@@ -1,0 +1,44 @@
+.grid-item {
+	&:nth-of-type(odd) {
+		clear: left;
+	}
+
+	&:nth-of-type(even) {
+		clear: right;
+	}
+
+	h5 {
+		color: #666666;
+	}
+
+	a {
+		color:inherit;
+		
+		&:hover, .grid-item a:focus {
+			text-decoration: none;
+		}
+
+		&:hover .panel {
+			box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.1);
+			background-color:#fdfdfd;
+		}
+	}
+
+	.grid-item-image {
+		width:128px;
+	}
+
+	@media(max-width: 500px) {
+		.media-left {
+			display: block;
+			text-align: center;
+			padding: 0;
+			margin-bottom:15px;
+		}
+
+		.grid-item-image {
+			width: auto;
+			height: 128px;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+@import "header";
+@import "footer";
+@import "jumbotron";
+@import "grid";
+@import "gallery";
+
+body {
+	min-width:320px;
+}
+
+.page-header {
+	margin-top: 110px;
+}
+
+.person {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.person-links a {
+	font-size:24px;
+	margin: 0 3px;
+}
+
+.btn-full-width {
+	width:100%;
+	margin-bottom:20px;
+}
+
+.latest-member{
+	img {
+		opacity: 0.5;
+		transition: all 0.1s;
+		width: 50px;
+	}
+
+	&:hover img {
+		opacity: 1;
+		transition: all 0.2s;
+	}
+}
