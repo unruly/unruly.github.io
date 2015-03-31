@@ -3,11 +3,11 @@ logo:
   icon: "./images/header-logo.svg"
   text: "Unruly<strong>Tech</strong>"
 links:
+  - name: Posts
+    url: './#'
+
   - name: Repos
     url: './#repos'
-
-  - name: Posts
-    url: './#posts'
 
   - name: Devs
     url: './#devs'
