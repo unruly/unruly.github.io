@@ -64,7 +64,7 @@ pages.index = pages.index || (function() {
 				cache: false
 			}).success(function(feedDocument) {
 				var $feed = $(feedDocument).find('feed'),
-					$entries = $feed.find('feed > entry:lt(4)'),
+					$entries = $feed.find('feed > entry:lt(6)'),
 					$featuredPostContainer = $('#postsContainer');
 
 				function summariseText(text, length) {
