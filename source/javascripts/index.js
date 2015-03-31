@@ -86,7 +86,7 @@ pages.index = pages.index || (function() {
 
 					var postHtml = Mustache.render(template, {
 						title: $entry.find('> title').text(),
-						date: new Date($entry.find('> updated').text()).toLocaleDateString(),
+						date: moment($entry.find('> updated').text()).fromNow(),
 						summary: summary,
 						author: {
 							name: $entry.find('> author > name').text()

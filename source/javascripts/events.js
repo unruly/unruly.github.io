@@ -13,6 +13,7 @@ pages.events = pages.events || (function() {
 					name: upcomingEvent.name,
 					descriptionHtml: upcomingEvent.description,
 					link: upcomingEvent.event_url,
+                    date: upcomingEvent.time ? moment(upcomingEvent.time).format('[on] dddd[,] MMMM Do YYYY [at] HH:mmA') : null,
 					image: './images/upcoming-event-placeholder.jpg',
 					membersCount: upcomingEvent.yes_rsvp_count + upcomingEvent.maybe_rsvp_count
 				});
@@ -31,18 +32,18 @@ pages.events = pages.events || (function() {
 		$.when(groupDeferred, latestMembersDeferred, latestPhotosDeferred, pastEventsDeferred).done(
 			function(groupResult, latestMembersResult, latestPhotosResult, pastEventsResult) {
 				var $aboutMeetupContainer = $('#about'),
-					group = groupResult[0].results[0]
+					group = groupResult[0].results[0],
 					latestMembers = latestMembersResult[0].results,
 					latestPhotos = latestPhotosResult[0].results,
 					pastEvents = pastEventsResult[0].results;
 
 				latestMembers.forEach(function(member) {
-					member.joined = new Date(member.joined).toLocaleDateString();
+					member.joined = moment(member.joined).fromNow();
 					member.url = member.link;
 				});
 
 				pastEvents.forEach(function(event) {
-					event.time = new Date(event.time).toLocaleDateString();
+					event.time = moment(event.time).fromNow();
 				});
 
 				var aboutMeetupHtml = Mustache.render(template, {
