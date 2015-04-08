@@ -4,8 +4,13 @@
             <div class="panel-body">
                 <div class="media">
                     {{#image}}
-                        <span class="media-left media-middle">
+                        <span class="media-left media-middle media-expand">
                             <img class="grid-item-image" src="{{image}}" alt="">
+                        </span>
+                    {{/image}}
+                    {{^image}}
+                        <span class="media-left media-middle media-placeholder">
+                            <img class="grid-item-image grid-item-image-logo grid-item-image-placeholder" src="./images/post-placeholder.png" alt="">
                         </span>
                     {{/image}}
                     <div class="media-body media-middle">

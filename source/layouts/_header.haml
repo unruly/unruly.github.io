@@ -11,7 +11,7 @@
     .navbar-collapse.collapse#mainNavigation
       %ul.nav.navbar-nav
         - data.header.links.each do |link|
-          %li{ class: current_page.data.title == link.name ? "active" : nil }
+          %li{ class: [("active" if current_page.data.title.include? link.name)]}
             = link_to link.url do
               - if link.icon?
                 %span.fa.fa-fw{class: "fa-#{link.icon}"}

@@ -1,5 +1,10 @@
 {
-	"vast-xml": {
-		"image": "./images/repo-placeholder.png"
+    "featured": {
+        "title": "junit-rules",
+        "description": "A collection of useful JUnit rules from Unruly's codebases",
+        "link": "https://github.com/unruly/junit-rules"
+    },
+	"unruly.github.io": {
+		"image": "./images/product-logo.png"
 	}
 }

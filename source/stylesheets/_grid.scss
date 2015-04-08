@@ -24,17 +24,29 @@
 		}
 	}
 
+    .media-body p {
+      margin: 7px 0 0 0;
+    }
+
 	.grid-item-image {
 		width:128px;
 	}
 
+    .grid-item-image-logo {
+        padding: 24px;
+    }
+
 	@media(max-width: 500px) {
-		.media-left {
+		.media-expand {
 			display: block;
 			text-align: center;
 			padding: 0;
 			margin-bottom:15px;
 		}
+
+        .media-placeholder {
+          display:none;
+        }
 
 		.grid-item-image {
 			width: auto;

@@ -20,25 +20,6 @@ pages.index = pages.index || (function() {
 		});
 	}
 
-	function addRepositories(template) {
-		$.getJSON('./javascripts/data/repos.json').success(function(reposConfig) {
-			$.getJSON('http://jahed.unruly.co/github/unruly/repos').success(function(repos) {
-				var $reposContainer = $('#reposContainer');
-
-				repos.forEach(function(repo) {
-					var repoHtml = Mustache.render(template, {
-						name: repo.name,
-						description: repo.description,
-						url: repo.html_url,
-						image: reposConfig[repo.name] ? reposConfig[repo.name].image : './images/repo-placeholder.png'
-					});
-
-					$reposContainer.append(repoHtml);
-				});
-			});
-		});
-	}
-
 	function addFeaturedPost(template) {
 		$.getJSON('./javascripts/data/posts.json').success(function(postsConfig) {
 			var $featuredPostContainer = $('#featuredPostContainer');
@@ -92,7 +73,7 @@ pages.index = pages.index || (function() {
 							name: $entry.find('> author > name').text()
 						},
 						url: $entry.find('> link').attr('href'),
-						image: image ||  './images/post-placeholder.png'
+						image: image
 					});
 
 					$featuredPostContainer.append(postHtml);
@@ -104,7 +85,6 @@ pages.index = pages.index || (function() {
 	function init() {
 		$.get('./javascripts/partials/featured-post.mustache').success(addFeaturedPost);
 		$.get('./javascripts/partials/post.mustache').success(addLatestPosts);
-		$.get('./javascripts/partials/repo.mustache').success(addRepositories);
 		$.get('./javascripts/partials/person.mustache').success(addDevelopers);
 	}
 

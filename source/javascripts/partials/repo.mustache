@@ -4,9 +4,7 @@
             <div class="panel-body">
                 <div class="media">
                     <span class="media-left media-middle">
-                    {{#image}}
-                        <img class="grid-item-image" src="{{image}}" alt="{{name}} icon">
-                    {{/image}}
+                        <img class="grid-item-image grid-item-image-logo" src="{{#image}}{{image}}{{/image}}{{^image}}./images/repo-placeholder.png{{/image}}" alt="{{name}} icon">
                     </span>
                     <div class="media-body media-middle">
                         <h4 class="media-heading">{{name}}</h4>
