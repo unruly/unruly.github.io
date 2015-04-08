@@ -9,7 +9,10 @@ scripts:
 
 .container#posts
   .page-header
-    %h2 Latest Posts
+    %h2
+      Latest Posts
+      %a.pull-right(href="http://video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml" title="Latest Posts Feed")
+        %span.fa.fa-fw.fa-rss-square
   .row
     .col-md-8
       #postsContainer
