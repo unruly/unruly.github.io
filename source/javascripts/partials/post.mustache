@@ -1,25 +1,16 @@
-<div class="col-md-6 grid-item">
-    <a href="{{url}}" target="_blank">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="media">
-                    {{#image}}
-                        <span class="media-left media-middle media-expand">
-                            <img class="grid-item-image" src="{{image}}" alt="">
-                        </span>
-                    {{/image}}
-                    {{^image}}
-                        <span class="media-left media-middle media-placeholder">
-                            <img class="grid-item-image grid-item-image-logo grid-item-image-placeholder" src="./images/post-placeholder.png" alt="">
-                        </span>
-                    {{/image}}
-                    <div class="media-body media-middle">
-                        <h4 class="media-heading">{{title}}</h4>
-                        <h5>by {{author.name}}, {{date}}</h5>
-                        <div>{{summary}}&hellip;</div>
-                    </div>
-                </div>
-            </div>
+<div class="post">
+    <h3 class="post-title"><a href="{{url}}" target="_blank">{{title}}</a></h3>
+    <div class="post-meta text-muted">by {{author.name}}, {{date}}</div>
+    {{#image}}
+        <div class="post-feature">
+            <a href="{{url}}" target="_blank">
+                <img class="post-image" src="{{image}}" alt="">
+            </a>
         </div>
-    </a>
+    {{/image}}
+    <div class="post-label">Excerpt</div>
+    <div class="post-content">
+        {{&summary}}
+    </div>
+    <a class="btn btn-primary" href="{{url}}">Read more</a>
 </div>

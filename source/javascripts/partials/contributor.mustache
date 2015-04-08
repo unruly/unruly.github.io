@@ -1,0 +1,18 @@
+<div class="grid-item col-md-12 col-sm-6">
+    <div class="media contributor">
+        <span class="media-left media-middle">
+            <img class="img-thumbnail developer-image" src="{{#image}}{{image}}{{/image}}">
+        </span>
+        <div class="media-body media-middle">
+            <h5 class="media-heading">{{name}}</h5>
+            <p class="contributor-links">
+                {{#links}}
+                    <a href="{{url}}" title="{{name}}"><span class="fa {{iconClass}}"></span></a>
+                {{/links}}
+                <a href="{{githubUrl}}" title="{{name}}'s GitHub">
+                    <span class="fa fa-github"></span>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

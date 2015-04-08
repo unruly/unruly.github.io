@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "Posts"
 scripts:
   - index
 ---
@@ -10,20 +10,26 @@ scripts:
 .container#posts
   .page-header
     %h2 Latest Posts
-  .row#postsContainer
-
-.container#devs
-  .page-header
-    %h2 Some Unrulies
   .row
     .col-md-8
-      .row#devsContainer
+      #postsContainer
+      %p.text-muted.text-center
+        Want more? Check out our developers' pages!
 
     .col-md-4
-      .row
-        - data.teams.teams.each do |team|
-          .col-xs-12
-            .panel.panel-default
-              .panel-body
-                %h4= team.name
-                %p= team.description
+      .col-md-12
+        %h3 About
+        %p
+          Find out about the latest tech and projects our developers are working on inside and outside of
+          <a href="http://unruly.co">Unruly</a>.
+        %p
+          These posts are excerpts taken straight from our developers so click through if you want to read the
+          full article.
+
+      .col-md-12
+        %h3 Contributors
+        #contributors.row
+        %hr/
+        .row
+          .col-md-12
+            #developers.developer-container

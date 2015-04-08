@@ -3,11 +3,13 @@ logo:
   icon: "./images/header-logo.svg"
   text: "Unruly<strong>Tech</strong>"
 links:
-  - name: Blog
+  - name: Posts
     url: './'
+    icon: 'pencil'
 
   - name: Repos
     url: './repos.html'
+    icon: 'code-fork'
 
   - name: Jobs
     url: './jobs.html'
