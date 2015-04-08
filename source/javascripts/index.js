@@ -73,7 +73,7 @@ pages.index = pages.index || (function() {
             }).success(function (feedDocument) {
                 var $feed = $(feedDocument).find('feed'),
                     $entries = $feed.find('feed > entry:lt(6)'),
-                    $featuredPostContainer = $('#postsContainer');
+                    $postsContainer = $('#postsContainer');
 
                 function summariseText(text, length) {
                     var summary = text.substr(0, length);
@@ -109,8 +109,10 @@ pages.index = pages.index || (function() {
                         image: image
                     });
 
-                    $featuredPostContainer.append(postHtml);
+                    $postsContainer.append(postHtml);
                 });
+
+                $postsContainer.find('.loading').remove();
             });
         });
     }

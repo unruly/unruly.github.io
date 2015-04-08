@@ -64,7 +64,9 @@ pages.events = pages.events || (function() {
 					imagesLoaded: true,
 					wrapAround: true
 				});
-			}
+
+                $aboutMeetupContainer.find('.loading').remove();
+            }
 		);
 	}
 

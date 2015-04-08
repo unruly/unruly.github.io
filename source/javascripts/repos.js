@@ -17,7 +17,9 @@ pages.index = pages.index || (function() {
 
 					$reposContainer.append(repoHtml);
 				});
-			});
+
+                $reposContainer.find('.loading').remove();
+            });
 		});
 	}
 

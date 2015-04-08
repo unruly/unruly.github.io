@@ -31,7 +31,9 @@ pages.jobs = pages.jobs || (function() {
 
 					$jobsContainer.append(jobHtml);
 				});
-			});
+
+                $jobsContainer.find('.loading').remove();
+            });
 		});
 	}
 
