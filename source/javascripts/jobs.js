@@ -13,7 +13,14 @@ pages.jobs = pages.jobs || (function() {
 					return date.isAfter(moment().subtract(6, 'months'));
 				}
 
-				$items.each(function() {
+				$items
+                    .sort(function(a, b) {
+                        var dateA = moment(new Date($(a).find('> pubDate').text())),
+                            dateB = moment(new Date($(b).find('> pubDate').text()));
+
+                        return dateB.diff(dateA);
+                    })
+                    .each(function() {
 					var $item = $(this),
 						title = $item.find('> title').text(),
 						link = $item.find('> link').text(),
