@@ -4,6 +4,6 @@ rvm:
 before_install:
   - gem install middleman
 script:
-  - middleman build
+  - bundle exec middleman build
 after_success:
-  - middleman deploy
+  - bundle exec middleman deploy
