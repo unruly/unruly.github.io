@@ -4,16 +4,12 @@ rvm:
 branches:
   only:
   - develop
-env:
-  global:
-  - secure: qI8Y4DDJPyTFon/VMbNc1/SW/Y0AvB2dVRN+/7zG0o7pQIU4qMXey+6un6j75Vg2EMVkF85lw0aR1Breg+N0xvUlTwLHf0I9YiUzPzuGZyrgPNu7roGoQB8cUYx8OcDPEB2G5w7vXp7y6hg50N13uEWoQBoaB3sTcodpCsvJ3gg=
-  - secure: fhtQKhMfussgpAhI2R2nDkQY3OyHuMI58EKcnRFt8PabbVztVqN0bu6rSNd/W5B9Ku7gfVSGmJ0XtnYF3VQoYKTrptMU0T/xO+IABTzqzCXhlerntc2WDHIgONRN9FyTRkJ9bsPPmJO2ek65lnv0DEsJ2SuLqiVTioRdUbPs/KM=
 before_install:
 - gem install middleman
 script:
 - bundle exec middleman build
 after_success:
 - echo ${GH_TOKEN} > ./.git/credentials
-- git config user.name 'Travis CI'
+- git config user.name ${GH_USER}
 - git config user.email ${GH_EMAIL}
 - bundle exec middleman deploy
