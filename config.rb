@@ -17,13 +17,16 @@ configure :build do
   # activate :asset_hash
 end
 
-after_build do
-  puts "\nCopying GitHub-specific files"
-  system "cp -rv ./github/* ./build/"
-end
-
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = 'master'
-  deploy.build_before = true
+
+  committer_app = "#{Middleman::Deploy::PACKAGE} v#{Middleman::Deploy::VERSION}"
+  commit_message = "Deployed using #{committer_app}"
+
+  if ENV["TRAVIS_BUILD_NUMBER"]
+    commit_message += " (Travis Build \##{ENV["TRAVIS_BUILD_NUMBER"]})"
+  end
+
+  deploy.commit_message = commit_message
 end
