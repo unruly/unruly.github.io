@@ -4,8 +4,6 @@ rvm:
 branches:
   only:
   - develop
-before_install:
-- gem install middleman
 script:
 - bundle exec rake test
 after_success:
