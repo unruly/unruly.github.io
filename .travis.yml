@@ -7,9 +7,6 @@ branches:
 before_install:
 - gem install middleman
 script:
-- bundle exec middleman build
+- bundle exec rake test
 after_success:
-- echo ${GH_TOKEN} > ./.git/credentials
-- git config user.name ${GH_USER}
-- git config user.email ${GH_EMAIL}
-- bundle exec middleman deploy
+- bundle exec rake deploy
