@@ -9,4 +9,4 @@ before_install:
 script:
 - bundle exec rake test
 after_success:
-- bundle exec rake deploy
+- bundle exec rake travis_deploy
