@@ -16,4 +16,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 # Deployment
 gem "middleman-deploy", "~> 1.0.0"
 
-gem "rake"
+gem "rake", "~> 0.9.6"
