@@ -18,7 +18,7 @@ namespace :travis do
     Rake::Task["test"].invoke
   end
 
-  task :deploy do
+  task :after_success do
     puts "\nRunning Travis Deployment"
     puts "\nSetting up Git access"
     try "echo ${GH_TOKEN} > ./.git/credentials"
