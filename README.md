@@ -1,5 +1,7 @@
 # Unruly Tech
 
+[![Build Status](https://travis-ci.org/unruly/unruly.github.io.svg?branch=develop)](https://travis-ci.org/unruly/unruly.github.io)
+
 Unruly's Tech site.
 
 ## Installation
