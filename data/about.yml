@@ -1,0 +1,58 @@
+description:
+  <p>Unruly is a leading ad-tech company based in the heart of London’s Tech City. We are strong believers in eXtreme
+  Programming and we believe that our Modern XP practices are leading the way in the London XP community.</p>
+
+  <p>As Unruly resides in the fast-moving market of programmatic advertising, we’re building resilient systems to
+  handle large data volumes with latency constraints.</p>
+
+  <p>We work in highly collaborative teams that take full responsibility for end-to-end development - all of our
+  production code is developed collaboratively through paired or mob programming.</p>
+
+teams:
+  - name: Chutney
+    id: chutney
+    description:
+      The Chutney team is focused on developing features for UnrulyX, our high-performance ad exchange, and
+      the stats pipeline which powers Unruly’s real-time reporting platform.
+    tech:
+      - Java 8
+      - Spring
+      - Jersey/Jetty/Jackson
+      - Maven
+      - Hibernate
+      - Redis
+      - Vectorwise
+      - PostgreSQL
+
+  - name: Marmalade
+    id: marmalade
+    description:
+      The Marmalade team creates and builds our high-quality video players, seen by millions of users every day.
+      Unruly’s native units blend seamlessly into publisher pages using its pioneering Liquid Layout Technology, giving
+      a clean and focused user experience across the Open Web.
+    tech:
+      - HTML5
+      - CSS3
+      - Javascript
+      - JQuery
+      - NodeJS
+      - Grunt
+      - NPM/Bower
+      - RequireJS
+      - Java 8
+
+  - name: Tabasco
+    id: tabasco
+    description:
+      The Tabasco team is actively developing Unruly’s intelligent bidding systems to optimise inventory quality for our
+      publishers, in addition to supporting Unruly’s proprietary analytical dataset and its interfaces - the
+      Viral Video Chart and Unruly Analytics.
+    tech:
+      - Java 8
+      - Spring
+      - Scala
+      - Play
+      - SBT
+      - Redis
+      - Cascading/Amazon EMR
+      - Vectorwise

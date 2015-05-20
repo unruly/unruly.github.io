@@ -13,7 +13,12 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 # Windows does not come with time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw]
 
-# Deployment
 gem "middleman-deploy", "~> 1.0.0"
 
 gem "rake", "~> 0.9.6"
+
+gem "middleman-blog"
+
+gem "nokogiri"
+
+gem "builder"

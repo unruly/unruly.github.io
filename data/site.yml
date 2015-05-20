@@ -1,6 +1,7 @@
 name: 'Unruly Tech'
 description: 'Find out more about our open source contributions and learn more about our software development teams.'
-image: './images/branded-product-logo.png'
-icon: './images/product-logo.png'
+image: '/images/branded-product-logo.png'
+icon: '/images/product-logo.png'
+url: 'http://tech.unruly.co'
 
 google_analytics_id: 'UA-54623334-2'

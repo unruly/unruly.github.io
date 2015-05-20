@@ -3,10 +3,6 @@
 	overflow:hidden;
 }
 
-.jumbotron-top {
-	margin: 75px 0 40px 0;
-}
-
 .jumbotron-background {
 	position: absolute;
 	width: 110%;
@@ -24,7 +20,7 @@
 .jumbotron-details {
 	position:relative;
 	z-index: 10;
-	background-color: rgba(0,0,0,0.6);
+	background-color: rgba(0,0,0,0.7);
 	padding: 10px 30px;
 
 	h1 {
@@ -40,4 +36,32 @@
 	p {
 		color: #bbbbbb;
 	}
+}
+
+.carousel {
+    background: #333333;
+
+    .jumbotron {
+        margin-bottom: 0;
+    }
+
+    .slick-dots {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 5px auto;
+
+        li {
+
+            &.slick-active button:before {
+                color: white;
+            }
+
+            button:before {
+                color: #eeeeee;
+                text-shadow: 1px 1px 1px black;
+            }
+        }
+    }
 }

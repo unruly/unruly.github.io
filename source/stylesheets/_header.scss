@@ -12,3 +12,15 @@
 .header-spacer {
     height: 75px;
 }
+
+@media(max-width: 991px) {
+
+    .navbar-nav .unruly-logo {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        img {
+            height: 35px;
+        }
+    }
+}

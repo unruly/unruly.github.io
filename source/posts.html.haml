@@ -1,0 +1,40 @@
+---
+title: "Devlogs"
+scripts:
+  - posts
+---
+
+#featuredPost
+  #featuredPostContainer
+
+.container#posts
+  .page-header
+    %h2
+      Latest Posts
+      %a.pull-right(href="http://video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml" title="Latest Posts Feed")
+        %span.fa.fa-fw.fa-rss-square
+  .row
+    .col-md-8
+      #postsContainer
+        .loading
+          %span.fa.fa-refresh.fa-spin
+      %p.text-muted.text-center
+        Want more? Check out our developers' blogs!
+
+    .col-md-4
+      .col-md-12
+        %br
+        %p
+          Find out about the latest tech and projects our developers are working on inside and outside of
+          <a href="http://unruly.co">Unruly</a>.
+        %p
+          These posts are excerpts taken straight from our developers so click through if you want to read the
+          full article.
+
+      .col-md-12
+        %h3 Contributors
+        #contributors.row
+        %hr/
+        .row
+          .col-md-12
+            #developers.developer-container

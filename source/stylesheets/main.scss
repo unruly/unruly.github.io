@@ -60,6 +60,21 @@ body {
     }
 }
 
+#postsContainer::after {
+    display: block;
+    background-position: center -13px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 200px;
+    height: 200px;
+    content: " ";
+    position: absolute;
+    right: -300px;
+    bottom: 500px;
+    background-image: url("../images/bots/bot-happy-right.png");
+    border-left: 1px solid #dddddd;
+}
+
 .post {
     margin-bottom: 50px;
 
@@ -81,6 +96,8 @@ body {
 
 .post-image {
     max-width: 75%;
+    width: auto;
+    height: auto;
 }
 
 .post-label {
@@ -91,7 +108,6 @@ body {
 
 .post-content {
     margin: 10px 0 20px;
-    font-size: 1.1em;
 }
 
 .loading {
@@ -99,4 +115,115 @@ body {
     font-size:50px;
     padding: 50px;
     color:#dddddd;
+}
+
+.article-text {
+    font-size: 16px;
+}
+
+.panel-image {
+    text-align: center;
+    position:relative;
+    .panel-body {
+        height: 150px;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &.panel, .panel-body, .panel-heading {
+        border: none;
+    }
+}
+
+.panel-image-link {
+
+    &:hover {
+        text-decoration: none;
+        .panel-body {
+            border-width: 5px 5px 0 5px;
+            border-color: #49afcd;
+            border-style: solid;
+        }
+        .panel-heading {
+            background-color: #49afcd;
+            color: #ffffff;
+        }
+    }
+
+}
+
+.chutney-color {
+    color: #E47025;
+}
+
+.marmalade-color {
+    color: #6C5A90;
+}
+
+.tabasco-color {
+    color: #D72132;
+}
+
+.chutney-background {
+    background-color: #E47025;
+}
+
+.marmalade-background {
+    background-color: #6C5A90;
+}
+
+.tabasco-background {
+    background-color: #D72132;
+}
+
+.team-description {
+
+    .team-header {
+        background: #333333;
+        padding: 10px 0 10px 15px;
+        color: white;
+        margin: 50px 0 20px;
+        position: relative;
+
+        &::after {
+            display: block;
+            background-size: auto 120px;
+            background-position: center -13px;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 100px;
+            content: " ";
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+        }
+
+    }
+
+    small {
+        text-transform: uppercase;
+        color: #666666;
+    }
+
+    .tech-cloud {
+        margin: 20px 0;
+    }
+
+    &.chutney {
+        .team-header::after {
+            background-image: url("../images/bots/chutney-bot-happy.png");
+        }
+    }
+
+    &.marmalade {
+        .team-header::after {
+            background-image: url("../images/bots/marmalade-bot-happy.png");
+        }
+    }
+
+    &.tabasco {
+        .team-header::after {
+            background-image: url("../images/bots/tabasco-bot-happy.png");
+        }
+    }
 }

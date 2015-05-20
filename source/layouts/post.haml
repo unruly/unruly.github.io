@@ -1,0 +1,9 @@
+= wrap_layout :layout do
+  %article.container
+    .post.col-md-8
+      %h2.post-title
+        = current_article.title
+      .post-meta.text-muted
+        %time= current_article.date.strftime('%d %B %Y')
+      .post-content.article-text
+        =yield

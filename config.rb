@@ -17,6 +17,15 @@ configure :build do
   # activate :asset_hash
 end
 
+activate :blog do |blog|
+  blog.name = "updates"
+  blog.prefix = "updates"
+  # blog.sources = "updates/{year}-{month}-{day}-{title}.html"
+  blog.calendar_template = "updates/calendar.html"
+  blog.tag_template = "updates/calendar.html"
+  blog.layout = "post"
+end
+
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = 'master'

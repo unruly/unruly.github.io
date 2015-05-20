@@ -1,0 +1,37 @@
+pitch:
+  <p>Unruly is a great place for software developers to work because we’ve been using eXtreme Programming (XP) from the
+  start. We believe that our <a href="http://benjiweber.co.uk/blog/2015/04/17/modern-extreme-programming/">Modern XP practices</a>
+  are leading the way in the London XP community.</p>
+
+  <p>We work in highly collaborative teams that take full responsibility for end-to-end development. As a developer at
+  Unruly, you will regularly push changes into our live environments. This may sound scary but we put a lot of
+  investment in automating our tests and continuous deployment infrastructure. All of our production code is developed
+  collaboratively through <a href="http://benjiweber.co.uk/blog/2013/02/03/pair-programming/">paired</a> or
+  <a href="http://benjiweber.co.uk/blog/2014/11/30/the-unruly-mob/">mob programming</a>. Pair programming helps us to
+  work fast without breaking things. When making critical changes, there’s always someone by your side to bounce ideas
+  off and help spot problems that you may have missed.</p>
+
+  <p>Unruly works in the fast-moving market of programmatic advertising. We have build resilient systems that can handle
+  large data volumes and under high load. Our XP discipline enables us to turn new features around in a few days. All
+  developers in our Product Development teams have the opportunity to lead research into new product features. As a
+  story owner, you will have conversations with end users and business stakeholders to figure out what is most valuable
+  to build. You present your thinking around software design to your team and get to see your ideas implemented into our
+  live products.</p>
+
+  <p>We also have 20% technical research time available to all our developers. You typically have one
+  <a href="http://rachelcdavies.github.io/2014/02/24/gold-cards-and-viking-helmet.html">Gold Card</a> day per
+  week to spend on your own learning, investigating whatever new tech you find interesting. We encourage all developers
+  to share their findings at the end of the week or as lightning talks. We have our own
+  <a href="http://rachelcdavies.github.io/2014/05/27/conference-club.html">Conference Club</a> and developers
+  also can go out for week long <a href="http://rachelcdavies.github.io/2014/05/12/developer-exchange.html">Dev eXchanges</a>
+  with external companies to bring back new ideas into our Product Development teams.</p>
+
+  <br/>
+
+highlights:
+  - title: Pair Programming
+    image: ./images/pairing-1.jpg
+  - title: Mobbing
+    image: ./images/jobs-banner-placeholder.jpg
+  - title: Agile XP Practices
+    image: ./images/featured-repo-placeholder.jpg
