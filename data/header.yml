@@ -3,7 +3,7 @@ logo:
   icon: "images/header-logo.svg"
   text: "Unruly<strong>Tech</strong>"
 links:
-  - name: Devlogs
+  - name: Devblogs
     url: '/posts.html'
     icon: 'pencil'
 
