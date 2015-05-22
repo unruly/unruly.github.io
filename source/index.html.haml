@@ -51,3 +51,9 @@ scripts:
       %br
       %p
         Want to know what our developers are up to? Check out their <a href="./posts.html">developer blogs</a>.
+      %hr
+      %h4 Tags
+      - blog.tags.each do |tag, articles|
+        =link_to "./updates/#{tag}.html", :class => 'label label-info' do
+          %span= tag
+
