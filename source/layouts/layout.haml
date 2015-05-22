@@ -12,9 +12,9 @@
 
     %title= [current_page.data.title, data.site.name].compact.join(" - ")
 
-    %link{rel:"shortcut icon", href:data.site.icon, type:"image/png"}
-    %link{rel:"icon", href:data.site.icon, type:"image/png"}
+    =favicon_tag data.site.icon
     %link{rel:"apple-touch-icon-precomposed", href:data.site.icon, type:"image/png"}
+
     %link{href:"//video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml", type:"application/atom+xml", rel:"alternate", title:"Unruly Tech Developer Blog Feed"}
 
     = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
