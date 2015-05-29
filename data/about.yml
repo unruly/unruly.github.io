@@ -56,3 +56,19 @@ teams:
       - Redis
       - Cascading/Amazon EMR
       - Vectorwise
+  - name: Shared Infrastructure
+    id: shared
+    description:
+      Across the teams we use a variety of software to manage, monitor and track our shared infrastructure and notify
+      us when something unexpected occurs.
+    tech:
+      - Puppet
+      - Test Kitchen
+      - Splunk
+      - ELK (Elasticsearch, Logstash, Kibana)
+      - Nagios
+      - CentOS
+      - TeamCity
+      - Graphite
+      - Grafana
+
