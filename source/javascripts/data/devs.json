@@ -3,15 +3,20 @@
         "name": "Jahed Ahmed",
 		"links": [
 			{
-				"name": "Jahed's Blog",
+				"name": "Jahed's Site",
 				"iconClass": "fa-home",
-				"url": "http://blog.jahed.io"
+				"url": "http://jahed.io"
 			},
 			{
 				"name": "Jahed's Twitter",
 				"iconClass": "fa-twitter",
 				"url": "https://twitter.com/hedjahead"
-			}
+			},
+            {
+                "name": "Jahed's Tumblr",
+                "iconClass": "fa-tumblr",
+                "url": "https://blog.jahed.io"
+            }
 		]
 	},
 	"mrwilson": {

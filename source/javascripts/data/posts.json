@@ -1,9 +1,0 @@
-{
-  "featuredPost": {
-    "title": "java-dirty - A fast append-only data store",
-    "author": {
-      "name": "Alex Wilson"
-    },
-    "link": "http://probablyfine.co.uk/2015/04/11/announcing-java-dirty/"
-  }
-}

@@ -4,8 +4,15 @@ scripts:
   - repos
 ---
 
-#featuredRepo
-  #featuredRepoContainer
+#featuredRepo.jumbotron
+  .container
+    .jumbotron-details
+      %h1= data.repos.featured.title
+      %p= data.repos.featured.description
+      %p
+        %a.btn.btn-primary.btn-lg.link{href:data.repos.featured.link }
+          View source
+  .jumbotron-background{ style:"background-image: url('#{data.repos.featured.image}')" }
 
 .container#repos
   .page-header

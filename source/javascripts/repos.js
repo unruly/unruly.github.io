@@ -23,25 +23,9 @@ pages.index = pages.index || (function() {
 		});
 	}
 
-    function addFeaturedRepo(template) {
-        $.getJSON('./javascripts/data/repos.json').success(function(reposConfig) {
-            var $featuredRepoContainer = $('#featuredRepoContainer');
-
-            var featuredRepoHtml = Mustache.render(template, {
-                title: reposConfig.featured.title,
-                description: reposConfig.featured.description,
-                link: reposConfig.featured.link,
-                image: reposConfig.featured.image || './images/featured-repo-placeholder.jpg'
-            });
-
-            $featuredRepoContainer.append(featuredRepoHtml);
-        });
-    }
-
 
 	function init() {
         $.get('./javascripts/partials/repo.mustache').success(addRepositories);
-        $.get('./javascripts/partials/featured-repo.mustache').success(addFeaturedRepo);
 	}
 
 	return {

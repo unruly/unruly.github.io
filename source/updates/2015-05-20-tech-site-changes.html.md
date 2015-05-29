@@ -2,7 +2,7 @@
 title: Updates and news now listed on the front page
 date: 2015-05-20 10:49 UTC
 published: true
-tags: updates
+tags: updates, site
 ---
 
 The front page on Unruly Tech will now show what's going on at Unruly.
