@@ -1,5 +1,29 @@
 {
 	"unruly.github.io": {
-		"image": "./images/product-logo.png"
-	}
+		"image": "./images/product-logo.png",
+        "badges": [
+            "https://img.shields.io/travis/unruly/unruly.github.io/develop.svg"
+        ]
+	},
+    "flume-spooling-directory-sink": {
+        "badges": [
+            "https://img.shields.io/travis/unruly/flume-spooling-directory-sink.svg"
+        ]
+    },
+    "junit-rules": {
+        "badges": [
+            "https://img.shields.io/maven-central/v/co.unruly/junit-rules.svg",
+            "https://img.shields.io/travis/unruly/junit-rules.svg"
+        ]
+    },
+    "java-8-matchers": {
+        "badges": [
+            "https://img.shields.io/maven-central/v/co.unruly/java-8-matchers.svg"
+        ]
+    },
+    "validation": {
+        "badges": [
+            "https://img.shields.io/maven-central/v/co.unruly/validation.svg"
+        ]
+    }
 }

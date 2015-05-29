@@ -9,7 +9,14 @@
                     <div class="media-body media-middle">
                         <h4 class="media-heading">{{name}}</h4>
                         <p>{{description}}</p>
-                     </div>
+                        {{#badges.length}}
+                            <p>
+                                {{#badges}}
+                                    <img src="{{.}}" />
+                                {{/badges}}
+                            </p>
+                        {{/badges.length}}
+                    </div>
                 </div>
             </div>
         </div>

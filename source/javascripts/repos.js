@@ -8,11 +8,13 @@ pages.index = pages.index || (function() {
 				var $reposContainer = $('#reposContainer');
 
 				repos.forEach(function(repo) {
+                    var repoConfig = reposConfig[repo.name];
 					var repoHtml = Mustache.render(template, {
 						name: repo.name,
 						description: repo.description,
 						url: repo.html_url,
-						image: reposConfig[repo.name] ? reposConfig[repo.name].image : null
+						image: repoConfig ? repoConfig.image : null,
+                        badges: repoConfig ? repoConfig.badges : null
 					});
 
 					$reposContainer.append(repoHtml);
