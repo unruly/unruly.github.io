@@ -11,7 +11,3 @@ highlights:
     description: We're looking for an SRE to join our team. Apply now!
     image: ./images/monitoring-1.png
     link: 'http://unruly.co/job/sre/'
-  - title: XP2015 Talks
-    description: Alex Wilson will be attending XP2015 at Helsinki. Meet him there.
-    image: ./images/sharethelove.jpg
-    link: http://www.xp2015.org/
