@@ -14,10 +14,6 @@ scripts:
   .jumbotron-background{ style:"background-image: url('./images/mob-1.jpg')" }
 
 .container
-  .page-header
-    %h2
-      %span Current Happenings
-      %span.fa.fa-fw.fa-bullhorn.pull-right
   - data.index.highlights.each_slice(3) do |highlights_group|
     .row
       - highlights_group.each do |highlight|
