@@ -75,7 +75,7 @@ pages.posts = pages.posts || (function() {
                     summary = $('<div>')
                         .append($(
                             summariseText($('<div>').append(
-                                $content.find('p, blockquote, ul, ol, h1,h2,h3,h4,h5')
+                                $content.find('>blockquote, >p, >ul, >ol, >h1, >h2, >h3, >h4, >h5').clone()
                             ).html(), 1000)
                         ))
                         .html();
