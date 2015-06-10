@@ -2,5 +2,4 @@ featured:
   title:  Automating Deployments to GitHub Pages with Middleman and Travis CI
   author: Jahed Ahmed
   link:   http://blog.jahed.io/post/120348496212/automating-deployments-to-github-pages-with
-  image:  http://i.imgur.com/NLC8fKD.png
-  # image:  images/featured-post-placeholder.jpg
+  image:  images/featured-post-placeholder.jpg
