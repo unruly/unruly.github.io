@@ -9,7 +9,8 @@ Unruly's Tech site.
 Install dependencies:
 
 ```sh
-gem install
+gem install bundler
+bundle install
 ```
 
 ## Usage
