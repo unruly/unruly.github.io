@@ -31,6 +31,12 @@ gem install bundler
 bundle install
 ```
 
+### Pulling Changes
+
+As multiple contributors may be making changes to files at the same time, it's suggested you `merge` using `git pull` rather than `rebase` and resolve any conflicts before pushing changes. This is so that your local commits don't overwrite any pushed changes.
+
+If you do `rebase` then always go through your local commits and changes before you push them as they may overwrite pushed changes.
+
 ### Using Middleman
 
 See [Middleman's Docs](https://middlemanapp.com/basics/install/)
