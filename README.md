@@ -20,9 +20,18 @@ bundle install
 See [Middleman's Docs](https://middlemanapp.com/basics/install/)
 
 ```sh
-middleman         # Runs a local server for testing with livereload
-middleman build   # Builds the static website
-middleman deploy  # Builds and deploys to gh-pages
+bundle exec middleman         # Runs a local server for testing with livereload
+bundle exec middleman build   # Builds the static website
+```
+
+## Deploying
+
+[Travis](https://travis-ci.org/unruly/unruly.github.io) is already set up to deploy pushes automatically on successful builds so ideally you should not need to deploy manually from a local machine. If you need to deploy a previous build, Travis lets you. Just pick a build in Travis' web interface and re-run it. 
+
+If you really need to deploy from a local machine, you can run:
+
+```sh
+bundle exec rake test deploy
 ```
 
 ### Excluding Files from Deployment
