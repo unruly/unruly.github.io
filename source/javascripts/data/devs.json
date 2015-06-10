@@ -61,11 +61,6 @@
 				"name": "Tomas' Terminal",
 				"iconClass": "fa-terminal",
 				"url": "http://home.libal.eu"
-			},
-			{
-				"name": "Tomas' Github",
-				"iconClass": "fa-github",
-				"url": "https://github.com/tomaslibal"
 			}
 		]
 	},
