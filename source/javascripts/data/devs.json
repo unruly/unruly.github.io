@@ -53,14 +53,19 @@
         "name": "Tomas Libal",
         "links": [
 			{
-				"name": "Tomas's homepage",
+				"name": "Tomas's Blog",
 				"iconClass": "fa-home",
+				"url": "http://blog.libal.eu"
+			},
+			{
+				"name": "Tomas' Terminal",
+				"iconClass": "fa-terminal",
 				"url": "http://home.libal.eu"
 			},
 			{
-				"name": "Tomas' Foundry of 0 & 1",
-				"iconClass": "fa-tumblr",
-				"url": "http://foundryof01.tumblr.com"
+				"name": "Tomas' Github",
+				"iconClass": "fa-github",
+				"url": "https://github.com/tomaslibal"
 			}
 		]
 	},
