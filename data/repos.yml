@@ -1,5 +1,5 @@
 featured:
-  title:  junit-rules
-  description: A collection of useful JUnit rules from Unruly's codebases
-  link:   https://github.com/unruly/junit-rules
+  title:  java-8-matchers
+  description: Hamcrest Matchers for Java 8 features
+  link:   https://github.com/unruly/java-8-matchers
   image:  images/featured-repo-placeholder.jpg
