@@ -12,7 +12,7 @@ pages.index = pages.index || (function() {
 					var repoHtml = Mustache.render(template, {
 						name: repo.name,
 						description: repo.description,
-						url: repo.html_url,
+						url: repo.homepage || repo.html_url,
 						image: repoConfig ? repoConfig.image : null,
                         badges: repoConfig ? repoConfig.badges : null
 					});
