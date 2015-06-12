@@ -1,5 +1,5 @@
 featured:
   title:  java-8-matchers
   description: Hamcrest Matchers for Java 8 features
-  link:   https://github.com/unruly/java-8-matchers
+  link:   http://tech.unruly.co/java-8-matchers
   image:  images/featured-repo-placeholder.jpg
