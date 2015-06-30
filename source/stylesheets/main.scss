@@ -77,11 +77,8 @@ body {
 
 .post {
     margin-bottom: 50px;
-
-    &:not(:first-child) {
-        border-top: 1px solid #dddddd;
-        padding-top:20px;
-    }
+    border-bottom: 1px solid #dddddd;
+    padding-bottom:20px;
 }
 
 .post-feature {

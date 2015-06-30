@@ -14,16 +14,6 @@ scripts:
   .jumbotron-background{ style:"background-image: url('./images/mob-1.jpg')" }
 
 .container
-  - data.index.highlights.each_slice(3) do |highlights_group|
-    .row
-      - highlights_group.each do |highlight|
-        .col-md-4
-          =link_to highlight.link, :class => 'panel-image-link' do
-            .panel.panel-default.panel-image
-              .panel-body{ style:"background-image: url('#{highlight.image}')" }
-              .panel-heading
-                %h4= highlight.title
-                %p= highlight.description
   .page-header
     %h2
       %span Latest Updates
@@ -41,10 +31,17 @@ scripts:
               %time= article.date.strftime('%d %B %Y')
             .post-content.article-text
               =article.summary
-        %p.text-muted.text-center
+        %p.text-muted.text-center.hidden-sm.hidden-xs
           No more updates to list
     .col-md-4
-      %br
+      - data.index.highlights.each do |highlight|
+        =link_to highlight.link, :class => 'panel-image-link' do
+          .panel.panel-default.panel-image
+            .panel-body{ style:"background-image: url('#{highlight.image}')" }
+            .panel-heading
+              %h4= highlight.title
+              %p= highlight.description
+      %hr
       %p
         Want to know what our developers are up to? Check out their <a href="./posts.html">developer blogs</a>.
       %hr

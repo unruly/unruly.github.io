@@ -1,4 +1,8 @@
 highlights:
+  - title: Looking for Site Reliability Engineers!
+    description: We're looking for an SRE to join our team. Apply now!
+    image: ./images/monitoring-1.png
+    link: 'http://unruly.co/job/sre/'
   - title: Dev Exchange
     description: We're looking to exchange developers with another company for a week or so to share our XP experiences. Interested?
     image: ./images/devexchange.jpg
@@ -7,7 +11,3 @@ highlights:
     description: We hold monthly talks at Unruly HQ. Find out more and join in!
     image: ./images/upcoming-event-placeholder.jpg
     link: '/events.html'
-  - title: Looking for Site Reliability Engineers!
-    description: We're looking for an SRE to join our team. Apply now!
-    image: ./images/monitoring-1.png
-    link: 'http://unruly.co/job/sre/'
