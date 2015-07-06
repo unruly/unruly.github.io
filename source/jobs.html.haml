@@ -29,6 +29,8 @@ scripts:
     .row
       .col-md-8
         =data.jobs.pitch
+        =link_to 'about.html', class: 'btn btn-primary btn-lg' do
+          More about us
       .col-md-4
         .row
           - data.jobs.highlights.each do |highlight|
