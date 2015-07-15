@@ -4,6 +4,8 @@
       %h2.post-title
         = current_article.title
       .post-meta.text-muted
-        %time= current_article.date.strftime('%d %B %Y')
+        %time= current_article.date.strftime('%B %d, %Y')
+        - if current_article.data.author
+          • By #{current_article.data.author}
       .post-content.article-text
         =yield

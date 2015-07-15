@@ -28,7 +28,9 @@ scripts:
               =link_to article.url do
                 = article.title
             .post-meta.text-muted
-              %time= article.date.strftime('%d %B %Y')
+              %time= article.date.strftime('%B %d, %Y')
+              - if article.data.author
+                • By #{article.data.author}
             .post-content.article-text
               =article.summary
         %p.text-muted.text-center.hidden-sm.hidden-xs
@@ -48,6 +50,5 @@ scripts:
       %h4 Tags
       .tag-list
         - blog.tags.each do |tag, articles|
-          =link_to "./updates/tags/#{tag}.html", :class => 'label label-info' do
-            %span= tag
+          =link_to tag, "./updates/tags/#{tag}.html", :class => 'label label-info'
 

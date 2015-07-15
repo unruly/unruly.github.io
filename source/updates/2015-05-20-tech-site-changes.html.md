@@ -1,5 +1,6 @@
 ---
 title: Updates and news now listed on the front page
+author: Jahed Ahmed
 date: 2015-05-20 10:49 UTC
 published: true
 tags: updates, site

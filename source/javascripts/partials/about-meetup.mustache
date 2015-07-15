@@ -35,13 +35,11 @@
 		<h3>Latest Members</h3>
 		{{#latestMembers}}
 			<div class="media latest-member">
-				{{#photo.photo_link}}
-			    	<div class="media-left">
-						<a href="{{url}}" target="_blank">
-		      				<img class="media-object" src="{{photo.photo_link}}" alt="Member Photo">
-						</a>
-			  		</div>
-		  		{{/photo.photo_link}}
+                <div class="media-left">
+                    <a href="{{url}}" target="_blank">
+                        <img class="media-object" src="{{photo.photo_link}}" alt="Member Photo">
+                    </a>
+                </div>
 		  		<div class="media-body">
 					<a href="{{url}}" target="_blank">
 						<h4 class="media-heading">{{name}}</h4>

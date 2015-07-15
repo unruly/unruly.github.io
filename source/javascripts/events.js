@@ -40,6 +40,8 @@ pages.events = pages.events || (function() {
 				latestMembers.forEach(function(member) {
 					member.joined = moment(member.joined).fromNow();
 					member.url = member.link;
+                    member.photo = member.photo || {};
+                    member.photo.photo_link = member.photo.photo_link || '/images/unknown-avatar.png'
 				});
 
 				pastEvents.forEach(function(event) {

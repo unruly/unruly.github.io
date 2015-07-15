@@ -49,14 +49,7 @@ body {
 
 .latest-member {
     img {
-        opacity: 0.5;
-        transition: all 0.1s;
         width: 50px;
-    }
-
-    &:hover img {
-        opacity: 1;
-        transition: all 0.2s;
     }
 }
 
@@ -69,15 +62,15 @@ body {
     height: 200px;
     content: " ";
     position: absolute;
-    right: -300px;
+    right: -210px;
     bottom: 500px;
     background-image: url("../images/bots/bot-happy-right.png");
-    border-left: 1px solid #dddddd;
+    border-left: 1px solid #eeeeee;
 }
 
 .post {
     margin-bottom: 50px;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #eeeeee;
     padding-bottom:20px;
 }
 
@@ -89,6 +82,8 @@ body {
 
 .post-meta {
     margin: 10px 0;
+    text-transform: uppercase;
+    font-size:12px;
 }
 
 .post-image {
@@ -226,7 +221,5 @@ body {
 }
 
 .tag-list {
-    .label {
-        margin-right: 10px;
-    }
+    font-size: 20px;
 }

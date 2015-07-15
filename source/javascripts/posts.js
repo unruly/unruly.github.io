@@ -83,7 +83,7 @@ pages.posts = pages.posts || (function() {
                 var postHtml = Mustache.render(template, {
                     title: $entry.find('> title').text(),
                     summary: summary,
-                    date: moment($entry.find('> updated').text()).fromNow(),
+                    date: moment($entry.find('> updated').text()).format('MMM DD, YYYY'),
                     author: {
                         name: $entry.find('> author > name').text()
                     },
