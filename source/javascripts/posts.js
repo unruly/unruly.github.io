@@ -71,9 +71,7 @@ pages.posts = pages.posts || (function() {
                 var $entry = $(this),
                     rawContent = $entry.find('> content').text(),
                     $content = $('<div>').append($.parseHTML(rawContent)),
-                    image = $content.find('img').filter(function(index) {
-                        return this.width > 200;
-                    }).attr('src'),
+                    image = $content.find('img:first-of-type').attr('src'),
                     summary = $('<div>')
                         .append($(
                             summariseText($('<div>').append(
