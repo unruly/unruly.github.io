@@ -2,12 +2,12 @@ var pages = pages || {};
 
 pages.posts = pages.posts || (function() {
 
-	function addContributors(template) {
-		$.getJSON('./javascripts/data/devs.json').success(function(devsConfig) {
-			$.getJSON('http://jahed.unruly.co/github/unruly/members').success(function(members) {
-				var $contributors = $('#contributors');
+    function addContributors(template) {
+        $.getJSON('./javascripts/data/devs.json').success(function(devsConfig) {
+            $.getJSON('http://jahed.unruly.co/github/unruly/members').success(function(members) {
+                var $contributors = $('#contributors');
 
-				members
+                members
                     .filter(function(member) {
                         return !!devsConfig[member.login];
                     })
@@ -22,9 +22,9 @@ pages.posts = pages.posts || (function() {
 
                         $contributors.append(contributorHtml);
                     });
-			});
-		});
-	}
+            });
+        });
+    }
 
     function addDevelopers(template) {
         $.getJSON('./javascripts/data/devs.json').success(function(devsConfig) {
@@ -48,7 +48,7 @@ pages.posts = pages.posts || (function() {
         });
     }
 
-	function addLatestPosts(template) {
+    function addLatestPosts(template) {
         $.ajax({
             url: 'http://video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml',
             cache: false
@@ -71,7 +71,9 @@ pages.posts = pages.posts || (function() {
                 var $entry = $(this),
                     rawContent = $entry.find('> content').text(),
                     $content = $('<div>').append($.parseHTML(rawContent)),
-                    image = $content.find('img:first-of-type').attr('src'),
+                    image = $content.find('img').filter(function(index) {
+                        return this.width > 200;
+                    }).attr('src'),
                     summary = $('<div>')
                         .append($(
                             summariseText($('<div>').append(
@@ -98,15 +100,15 @@ pages.posts = pages.posts || (function() {
         });
     }
 
-	function init() {
-		$.get('./javascripts/partials/post.mustache').success(addLatestPosts);
+    function init() {
+        $.get('./javascripts/partials/post.mustache').success(addLatestPosts);
         $.get('./javascripts/partials/contributor.mustache').success(addContributors);
         $.get('./javascripts/partials/developer.mustache').success(addDevelopers);
-	}
+    }
 
-	return {
-		init: init
-	};
+    return {
+        init: init
+    };
 })();
 
 pages.posts.init();
