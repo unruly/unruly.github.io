@@ -7,7 +7,7 @@
     %title= [current_page.data.title, data.site.name].compact.join(" - ")
     %meta{name:"description", content: current_page.data.description || data.site.description}
     =favicon_tag data.site.icon
-    %link{rel:"apple-touch-icon-precomposed", href:data.site.icon, type:"image/png"}
+    %link{rel:"apple-touch-icon-precomposed", href:data.site.image, type:"image/png"}
 
     %meta{property:"og:type",        content: "website"}
     %meta{property:"og:site_name",   content: [current_page.data.title, data.site.name].compact.join(" - ")}
