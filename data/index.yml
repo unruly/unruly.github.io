@@ -1,13 +1,13 @@
 highlights:
-  - title: Looking for Site Reliability Engineers!
-    description: We're looking for an SRE to join our team. Apply now!
-    image: ./images/monitoring-1.png
-    link: 'http://unruly.co/job/sre/'
+  - title: We're hiring!
+    description: We're looking for Java and JavaScript developers to join our growing team. Apply now!
+    image: ./images/loneranger.jpg
+    link: '/jobs.html'
   - title: Dev Exchange
     description: We're looking to exchange developers with another company for a week or so to share our XP experiences. Interested?
     image: ./images/devexchange.jpg
     link: 'http://rachelcdavies.github.io/2014/05/12/developer-exchange.html'
   - title: '#XProLo Talks'
-    description: We hold monthly talks at Unruly HQ. Find out more and join in!
+    description: We hold monthly talks at Unruly's London HQ. Find out more and join in!
     image: ./images/upcoming-event-placeholder.jpg
     link: '/events.html'
