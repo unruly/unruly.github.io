@@ -7,23 +7,29 @@ pages.index = pages.index || (function() {
 			$.getJSON('http://jahed.unruly.co/github/unruly/repos').success(function(repos) {
 				var $reposContainer = $('#reposContainer');
 
-				repos.forEach(function(repo) {
-                    var repoConfig = reposConfig[repo.name] || {};
-                    repo.language = repo.language || 'Mixed';
-                    repo.homepage = repo.homepage || repo.html_url;
+				repos.map(function(repo) {
+                        repo.pushed_at = new Date(repo.pushed_at);
+                        return repo;
+                    }).sort(function sortByUpdateDate(repoA, repoB) {
+                        return  repoB.pushed_at - repoA.pushed_at;
+                    }).forEach(function(repo) {
+                        var repoConfig = reposConfig[repo.name] || {};
+                        repo.language = repo.language || 'Mixed';
+                        repo.homepage = repo.homepage || repo.html_url;
 
-					var repoHtml = Mustache.render(template, {
-						name: repo.name,
-						description: repo.description,
-						url: repo.homepage,
-						image: repoConfig.image,
-                        badges: repoConfig.badges,
-                        language: repo.language,
-                        language_class: repo.language.toLowerCase()
-					});
+                        var repoHtml = Mustache.render(template, {
+                            name: repo.name,
+                            description: repo.description,
+                            url: repo.homepage,
+                            image: repoConfig.image,
+                            badges: repoConfig.badges,
+                            language: repo.language,
+                            language_class: repo.language.toLowerCase(),
+                            stars: repo.stargazers_count
+                        });
 
-					$reposContainer.append(repoHtml);
-				});
+                        $reposContainer.append(repoHtml);
+                    });
 
                 $reposContainer.find('.loading').remove();
             });

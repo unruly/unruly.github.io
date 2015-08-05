@@ -17,13 +17,12 @@
                     </div>
                 </div>
             </div>
-            {{#badges.length}}
-                <div class="panel-footer">
-                    {{#badges}}
-                        <img src="{{.}}" />
-                    {{/badges}}
-                </div>
-            {{/badges.length}}
+            <div class="panel-footer">
+                <span class="label label-info"><i class="fa fa-star"></i> {{stars}}</span>
+                {{#badges}}
+                    <img src="{{.}}" />
+                {{/badges}}
+            </div>
         </div>
     </a>
 </div>
