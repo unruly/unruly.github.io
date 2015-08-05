@@ -1,5 +1,6 @@
 ---
 title: Unruly <3s Java
+description: Unruly has been built on Java and its ecosystem since the company was founded in 2006, and we want to share some of the stuff we've been doing with it.
 author: Alex Wilson
 date: 2015-06-17 14:20 UTC
 published: true
