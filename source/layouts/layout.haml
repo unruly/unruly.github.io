@@ -11,8 +11,14 @@
 
     %meta{property:"og:type",        content: "website"}
     %meta{property:"og:site_name",   content: [current_page.data.title, data.site.name].compact.join(" - ")}
-    %meta{property:"og:image",       content: current_page.data.image || data.site.image}
+    %meta{property:"og:image",       content: URI.join(data.site.url, (current_page.data.image || data.site.image))}
     %meta{property:"og:description", content: current_page.data.description || data.site.description}
+
+    %meta{name:"twitter:card",        content: "summary"}
+    %meta{name:"twitter:site",        content: "@unrulyco"}
+    %meta{name:"twitter:title",       content: [current_page.data.title, data.site.name].compact.join(" - ")}
+    %meta{name:"twitter:description", content: current_page.data.description || data.site.description}
+    %meta{name:"twitter:image",       content: URI.join(data.site.url, (current_page.data.image || data.site.image))}
 
     %link{href:"/blog/feed.xml", type:"application/atom+xml", rel:"alternate", title:"Unruly Tech Blog Feed"}
     %link{href:"//video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml", type:"application/atom+xml", rel:"alternate", title:"Unruly Tech Developer Blog Feed"}
