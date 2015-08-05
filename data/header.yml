@@ -4,7 +4,7 @@ logo:
   text: "Unruly<strong>Tech</strong>"
 links:
   - name: Devblogs
-    url: '/posts.html'
+    url: '/developer-blogs.html'
     icon: 'pencil'
 
   - name: Repos

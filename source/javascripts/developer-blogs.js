@@ -1,6 +1,6 @@
 var pages = pages || {};
 
-pages.posts = pages.posts || (function() {
+pages.developer_blogs = pages.developer_blogs || (function() {
 
     function addContributors(template) {
         $.getJSON('./javascripts/data/devs.json').success(function(devsConfig) {
@@ -99,7 +99,7 @@ pages.posts = pages.posts || (function() {
     }
 
     function init() {
-        $.get('./javascripts/partials/post.mustache').success(addLatestPosts);
+        $.get('./javascripts/partials/developer-post.mustache').success(addLatestPosts);
         $.get('./javascripts/partials/contributor.mustache').success(addContributors);
         $.get('./javascripts/partials/developer.mustache').success(addDevelopers);
     }
@@ -109,4 +109,4 @@ pages.posts = pages.posts || (function() {
     };
 })();
 
-pages.posts.init();
+pages.developer_blogs.init();

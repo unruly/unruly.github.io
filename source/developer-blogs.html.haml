@@ -1,25 +1,25 @@
 ---
-title: "Devblogs"
+title: "Developer Blogs"
 description: Find out about the latest tech and projects our developers are working on inside and outside of Unruly.
 scripts:
-  - posts
+  - developer-blogs
 ---
 
 #featuredPost.jumbotron
   .container
     .jumbotron-details
-      %h1= data.posts.featured.title
-      %p= "by #{data.posts.featured.author}"
+      %h1= data.developer_blogs.featured.title
+      %p= "by #{data.developer_blogs.featured.author}"
       %p
-        %a.btn.btn-primary.btn-lg.link{href:data.posts.featured.link }
+        %a.btn.btn-primary.btn-lg.link{href:data.developer_blogs.featured.link }
           Read more
-  .jumbotron-background{ style:"background-image: url('#{data.posts.featured.image}')" }
+  .jumbotron-background{ style:"background-image: url('#{data.developer_blogs.featured.image}')" }
 
-.container#posts
+.container
   .page-header
     %h2
-      Latest Posts
-      %a.pull-right(href="http://video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml" title="Latest Posts Feed")
+      Developer Blogs
+      %a.pull-right(href="http://video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml" title="Latest Developer Posts Feed")
         %span.fa.fa-fw.fa-rss-square
   .row
     .col-md-8
