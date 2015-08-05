@@ -1,6 +1,6 @@
 var pages = pages || {};
 
-pages.index = pages.index || (function() {
+pages.repositories = pages.repositories || (function() {
 
 	function addRepositories(template) {
 		$.getJSON('./javascripts/data/repos.json').success(function(reposConfig) {
@@ -46,4 +46,4 @@ pages.index = pages.index || (function() {
 	};
 })();
 
-pages.index.init();
+pages.repositories.init();

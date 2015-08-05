@@ -8,7 +8,7 @@ links:
     icon: 'pencil'
 
   - name: Repos
-    url: '/repos.html'
+    url: '/repositories.html'
     icon: 'code-fork'
 
   - name: Jobs

@@ -1,0 +1,25 @@
+---
+title: Repositories
+description: A list of Unruly's open source projects and contributions.
+scripts:
+  - repositories
+---
+
+#featuredRepo.jumbotron
+  .container
+    .jumbotron-details
+      %h1= data.repositories.featured.title
+      %p= data.repositories.featured.description
+      %p
+        %a.btn.btn-primary.btn-lg.link{href:data.repositories.featured.link }= data.repositories.featured.cta
+  .jumbotron-background{ style:"background-image: url('#{data.repositories.featured.image}')" }
+
+.container
+  .page-header
+    %h2
+      Repositories
+      %a.pull-right(href="http://github.com/unruly" title="Unruly on GitHub")
+        %span.fa.fa-fw.fa-github
+  .row#reposContainer
+    .loading
+      %span.fa.fa-refresh.fa-spin
