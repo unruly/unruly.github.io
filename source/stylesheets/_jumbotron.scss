@@ -3,6 +3,26 @@
 	overflow:hidden;
 }
 
+.jumbotron-title {
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    .jumbotron-details {
+        margin-top: 100px;
+        background-color: #ffffff;
+
+        h2 {
+            color: #444444;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        }
+
+        @media(max-width: 767px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
 .jumbotron-background {
 	position: absolute;
 	width: 110%;

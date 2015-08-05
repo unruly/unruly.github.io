@@ -1,11 +1,23 @@
 = wrap_layout :layout do
-  %article.container
-    .post.col-md-8
-      %h2.post-title
-        = current_article.title
-      .post-meta.text-muted
-        %time= current_article.date.strftime('%B %d, %Y')
-        - if current_article.data.author
-          • By #{current_article.data.author}
-      .post-content.article-text
-        =yield
+  %article
+    .jumbotron.jumbotron-title
+      .container
+        .row
+          .col-md-8.jumbotron-details
+            %h2=current_article.title
+            .post-meta.text-muted
+              %time= current_article.date.strftime('%B %d, %Y')
+              - if current_article.data.author
+                • By #{current_article.data.author}
+      .jumbotron-background{ style:"background-image: url('/images/jobs-banner-placeholder.jpg')" }
+    .container
+      .post.col-md-8
+        .post-content.article-text
+          =yield
+      .col-md-4
+    .container
+      .row
+        .col-md-8
+          %p.tag-list
+            - blog.tags.each do |tag, articles|
+              =link_to tag, "/updates/tags/#{tag}.html", :class => 'label label-info'
