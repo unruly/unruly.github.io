@@ -8,13 +8,18 @@ pages.index = pages.index || (function() {
 				var $reposContainer = $('#reposContainer');
 
 				repos.forEach(function(repo) {
-                    var repoConfig = reposConfig[repo.name];
+                    var repoConfig = reposConfig[repo.name] || {};
+                    repo.language = repo.language || 'Mixed';
+                    repo.homepage = repo.homepage || repo.html_url;
+
 					var repoHtml = Mustache.render(template, {
 						name: repo.name,
 						description: repo.description,
-						url: repo.homepage || repo.html_url,
-						image: repoConfig ? repoConfig.image : null,
-                        badges: repoConfig ? repoConfig.badges : null
+						url: repo.homepage,
+						image: repoConfig.image,
+                        badges: repoConfig.badges,
+                        language: repo.language,
+                        language_class: repo.language.toLowerCase()
 					});
 
 					$reposContainer.append(repoHtml);
