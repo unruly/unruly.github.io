@@ -8,9 +8,9 @@ Unruly's Tech site.
 
 ### Adding and Changing Existing Content
 
-#### Updates
+#### Blog Posts
 
-You can add and edit update posts by going to the [updates folder](/source/updates) and editing the markdown files there. This can all be done via GitHub's interface so you don't need to have a complete local environment set up.
+You can add and edit blog posts by going to the [blog folder](/source/blog) and editing the markdown files there. This can all be done via GitHub's interface so you don't need to have a complete local environment set up.
 
 ##### Frontmatter
 

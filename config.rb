@@ -18,11 +18,11 @@ configure :build do
 end
 
 activate :blog do |blog|
-  blog.name = "updates"
-  blog.prefix = "updates"
-  # blog.sources = "updates/{year}-{month}-{day}-{title}.html"
-  blog.calendar_template = "updates/calendar.html"
-  blog.tag_template = "updates/calendar.html"
+  blog.name = "blog"
+  blog.prefix = "blog"
+  # blog.sources = "blog/{year}-{month}-{day}-{title}.html"
+  blog.calendar_template = "blog/calendar.html"
+  blog.tag_template = "blog/calendar.html"
   blog.layout = "post"
 end
 

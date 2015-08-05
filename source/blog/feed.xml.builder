@@ -4,8 +4,8 @@ layout: false
 
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
-  site_url = "#{data.site.url}/updates"
-  xml.title "Unruly Tech - Updates"
+  site_url = "#{data.site.url}/blog"
+  xml.title "Unruly Tech - Blog"
   xml.subtitle "Current going ons at Unruly's Development teams."
   xml.id URI.join(site_url, blog.options.prefix.to_s)
   xml.link "href" => URI.join(site_url, blog.options.prefix.to_s)

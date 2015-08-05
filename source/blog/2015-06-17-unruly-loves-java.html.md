@@ -3,7 +3,7 @@ title: Unruly <3s Java
 author: Alex Wilson
 date: 2015-06-17 14:20 UTC
 published: true
-tags: blog, java, opensource
+tags: java, opensource
 ---
 Unruly has been built on Java and its ecosystem since the company was founded in 2006, and we want to share some of the stuff we've been doing with it.
 

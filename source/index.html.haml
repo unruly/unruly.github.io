@@ -16,8 +16,8 @@ scripts:
 .container
   .page-header
     %h2
-      %span Latest Updates
-      =link_to 'updates/feed.xml', :class => 'pull-right', :title=>"Latest Updates Feed" do
+      %span Latest Posts
+      =link_to 'blog/feed.xml', :class => 'pull-right', :title=>"Latest Blog Posts Feed" do
         %span.fa.fa-fw.fa-rss-square
   .row
     .col-md-8
@@ -34,7 +34,7 @@ scripts:
             .post-content.article-text
               =article.summary
         %p.text-muted.text-center.hidden-sm.hidden-xs
-          No more updates to list
+          No more posts to list
     .col-md-4
       - data.index.highlights.each do |highlight|
         =link_to highlight.link, :class => 'panel-image-link' do
@@ -50,5 +50,5 @@ scripts:
       %h4 Tags
       .tag-list
         - blog.tags.each do |tag, articles|
-          =link_to tag, "./updates/tags/#{tag}.html", :class => 'label label-info'
+          =link_to tag, "./blog/tags/#{tag}.html", :class => 'label label-info'
 
