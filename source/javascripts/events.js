@@ -60,14 +60,14 @@ pages.events = pages.events || (function() {
 					pastEvents: pastEvents
 				});
 
-				$aboutMeetupContainer.append(aboutMeetupHtml);
-
-				$('.gallery').flickity({
-					imagesLoaded: true,
-					wrapAround: true
-				});
-
                 $aboutMeetupContainer.find('.loading').remove();
+                $aboutMeetupContainer.append(aboutMeetupHtml);
+
+                Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.4.2/themes/classic/galleria.classic.min.js');
+                Galleria.run('.galleria', {
+                    height: 500,
+                    lightbox: true
+                });
             }
 		);
 	}

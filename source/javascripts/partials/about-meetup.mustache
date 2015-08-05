@@ -52,12 +52,15 @@
 	<div class="col-md-8 col-md-pull-4 article-text">
 		<h3>About the Group</h3>
 		{{{descriptionHtml}}}
-
-		<div class="gallery js-flickity">
-			{{#images}}
-				<div class="gallery-cell"><img src="{{photo_link}}" alt="Group Image" /></div>
-			{{/images}}
-		</div>
 	</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="gallery galleria">
+            {{#images}}
+                <img src="{{photo_link}}" data-big="{{highres_link}}" alt="Group Image" />
+            {{/images}}
+        </div>
+    </div>
 </div>
 
