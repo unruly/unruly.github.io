@@ -64,7 +64,7 @@ pages.developer_blogs = pages.developer_blogs || (function() {
                 }
                 return summary
                     .replace(/[_\W]$/, "")
-                    .trim() + '&hellip;';
+                    .trim();
             }
 
             $entries.each(function () {
@@ -76,7 +76,7 @@ pages.developer_blogs = pages.developer_blogs || (function() {
                         .append($(
                             summariseText($('<div>').append(
                                 $content
-                            ).html(), 1000)
+                            ).html(), 2000)
                         ))
                         .html();
 

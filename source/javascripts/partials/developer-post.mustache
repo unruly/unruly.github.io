@@ -9,8 +9,11 @@
         </div>
     {{/image}}
     <div class="post-label">Excerpt</div>
-    <div class="post-content article-text">
-        {{&summary}}
+    <div class="post-content post-summary article-text">
+        <div class="post-summary-content">
+            {{&summary}}
+        </div>
+        <div class="post-summary-fade"></div>
     </div>
     <a class="btn btn-primary" href="{{url}}">Read more</a>
 </div>
