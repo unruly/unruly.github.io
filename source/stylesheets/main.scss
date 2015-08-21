@@ -109,6 +109,7 @@ body {
 
     .post-summary-fade {
         position: absolute;
+        pointer-events:none;
         top: 0;
         bottom: 0;
         left: 0;
