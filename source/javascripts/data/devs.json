@@ -12,16 +12,16 @@
 				"iconClass": "fa-twitter",
 				"url": "https://twitter.com/hedjahead"
 			},
-            {
-                "name": "Jahed's Tumblr",
-                "iconClass": "fa-tumblr",
-                "url": "https://hedjahead.tumblr.com"
-            }
+	       	{
+	       		"name": "Jahed's Tumblr",
+		        "iconClass": "fa-tumblr",
+		        "url": "https://hedjahead.tumblr.com"
+		    }
 		]
 	},
 	"mrwilson": {
-        "name": "Alex Wilson",
-        "links": [
+	    "name": "Alex Wilson",
+	    "links": [
 			{
 				"name": "Alex's Blog",
 				"iconClass": "fa-home",
@@ -35,8 +35,8 @@
 		]
 	},
 	"vikki": {
-        "name": "Vikki Read",
-        "links": [
+	    "name": "Vikki Read",
+	    "links": [
 			{
 				"name": "Vikki's Blog",
 				"iconClass": "fa-home",
@@ -50,8 +50,8 @@
 		]
 	},
 	"tomaslibal": {
-        "name": "Tomas Libal",
-        "links": [
+	    "name": "Tomas Libal",
+	    "links": [
 			{
 				"name": "Tomas's Blog",
 				"iconClass": "fa-home",
@@ -65,8 +65,8 @@
 		]
 	},
 	"rachelcdavies": {
-        "name": "Rachel Davies",
-        "links": [
+	    "name": "Rachel Davies",
+	    "links": [
 			{
 				"name": "Thoughts on Agile Coaching",
 				"iconClass": "fa-home",
@@ -80,8 +80,8 @@
 		]
 	},
 	"benjiman": {
-        "name": "Benji Weber",
-        "links": [
+	    "name": "Benji Weber",
+	   	"links": [
 			{
 				"name": "Benji's Website",
 				"iconClass": "fa-home",
@@ -95,8 +95,8 @@
 		]
 	},
 	"timpickles": {
-	        "name": "Tim Pickles",
-	        "links": [
+	    "name": "Tim Pickles",
+	    "links": [
 			{
 				"name": "8bit Pickles",
 				"iconClass": "fa-home",
@@ -110,18 +110,18 @@
 		]
 	},
 	"imranbohoran": {
-	        "name": "Imran Bohoran",
-	        "links": [
-				{
-					"name": "Imran's Blog",
-					"iconClass": "fa-home",
-					"url": "http://imranbohoran.blogspot.co.uk/"
-				},
-				{
-					"name": "Imran's Twitter",
-					"iconClass": "fa-twitter",
-					"url": "https://twitter.com/imranbohoran"
-				}
-			]
-		}
+	    "name": "Imran Bohoran",
+	    "links": [
+			{
+				"name": "Imran's Blog",
+				"iconClass": "fa-home",
+				"url": "http://imranbohoran.blogspot.co.uk/"
+			},
+			{
+				"name": "Imran's Twitter",
+				"iconClass": "fa-twitter",
+				"url": "https://twitter.com/imranbohoran"
+			}
+		]
+	}
 }
