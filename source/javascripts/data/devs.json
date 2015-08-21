@@ -95,8 +95,8 @@
 		]
 	},
 	"timpickles": {
-        "name": "Tim Pickles",
-        "links": [
+	        "name": "Tim Pickles",
+	        "links": [
 			{
 				"name": "8bit Pickles",
 				"iconClass": "fa-home",
@@ -108,5 +108,20 @@
 				"url": "https://twitter.com/timpickles"
 			}
 		]
-	}
+	},
+	"imranbohoran": {
+	        "name": "Imran Bohoran",
+	        "links": [
+				{
+					"name": "Imran's Blog",
+					"iconClass": "fa-home",
+					"url": "http://imranbohoran.blogspot.co.uk/"
+				},
+				{
+					"name": "Imran's Twitter",
+					"iconClass": "fa-twitter",
+					"url": "https://twitter.com/imranbohoran"
+				}
+			]
+		}
 }
