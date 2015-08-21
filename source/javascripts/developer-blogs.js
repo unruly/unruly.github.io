@@ -75,7 +75,7 @@ pages.developer_blogs = pages.developer_blogs || (function() {
                     summary = $('<div>')
                         .append($(
                             summariseText($('<div>').append(
-                                $content.find('>blockquote, >p, >ul, >ol, >h1, >h2, >h3, >h4, >h5').clone()
+                                $content
                             ).html(), 1000)
                         ))
                         .html();
