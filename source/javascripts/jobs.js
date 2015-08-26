@@ -3,7 +3,7 @@ var pages = pages || {};
 pages.jobs = pages.jobs || (function() {
 
 	function addJobs(template) {
-        $.get('http://jahed.unruly.co/rss/jobs.xml').success(function(rssDocument) {
+        $.get('http://api.tech.unruly.co/rss/jobs.xml').success(function(rssDocument) {
             var $channel = $(rssDocument).find('channel'),
                 $items = $channel.find('> item'),
                 $jobsContainer = $('#jobsContainer');

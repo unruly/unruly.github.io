@@ -4,7 +4,7 @@ pages.developer_blogs = pages.developer_blogs || (function() {
 
     function addContributors(template) {
         $.getJSON('./javascripts/data/devs.json').success(function(devsConfig) {
-            $.getJSON('http://jahed.unruly.co/github/unruly/members').success(function(members) {
+            $.getJSON('http://api.tech.unruly.co/github/unruly/members').success(function(members) {
                 var $contributors = $('#contributors');
 
                 members
@@ -28,7 +28,7 @@ pages.developer_blogs = pages.developer_blogs || (function() {
 
     function addDevelopers(template) {
         $.getJSON('./javascripts/data/devs.json').success(function(devsConfig) {
-            $.getJSON('http://jahed.unruly.co/github/unruly/members').success(function(members) {
+            $.getJSON('http://api.tech.unruly.co/github/unruly/members').success(function(members) {
                 var $developers = $('#developers');
 
                 members

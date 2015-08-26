@@ -4,7 +4,7 @@ pages.repositories = pages.repositories || (function() {
 
 	function addRepositories(template) {
 		$.getJSON('./javascripts/data/repos.json').success(function(reposConfig) {
-			$.getJSON('http://jahed.unruly.co/github/unruly/repos').success(function(repos) {
+			$.getJSON('http://api.tech.unruly.co/github/unruly/repos').success(function(repos) {
 				var $reposContainer = $('#reposContainer');
 
 				repos.map(function(repo) {

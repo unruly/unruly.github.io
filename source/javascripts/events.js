@@ -2,7 +2,7 @@ var pages = pages || {};
 
 pages.events = pages.events || (function() {
 	function addUpcomingEvent(template) {
-		var upcomingEventDeferred = $.getJSON('http://jahed.unruly.co/meetup/2/events?group_urlname=Extreme-Programmers-London&page=1&status=upcoming,proposed&desc=true');
+		var upcomingEventDeferred = $.getJSON('http://api.tech.unruly.co/meetup/2/events?group_urlname=Extreme-Programmers-London&page=1&status=upcoming,proposed&desc=true');
 
 		$.when(upcomingEventDeferred).done(
 			function(upcomingEventResult) {
@@ -24,10 +24,10 @@ pages.events = pages.events || (function() {
 	}
 
 	function addMeetupInfo(template) {
-		var groupDeferred = $.getJSON('http://jahed.unruly.co/meetup/2/groups?group_urlname=Extreme-Programmers-London');
-		var latestMembersDeferred = $.getJSON('http://jahed.unruly.co/meetup/2/members?group_urlname=Extreme-Programmers-London&page=5&order=joined&desc=true');
-		var latestPhotosDeferred = $.getJSON('http://jahed.unruly.co/meetup/2/photos?group_urlname=Extreme-Programmers-London&order=time&page=10');
-		var pastEventsDeferred = $.getJSON('http://jahed.unruly.co/meetup/2/events?group_urlname=Extreme-Programmers-London&page=3&status=past&desc=true');
+		var groupDeferred = $.getJSON('http://api.tech.unruly.co/meetup/2/groups?group_urlname=Extreme-Programmers-London');
+		var latestMembersDeferred = $.getJSON('http://api.tech.unruly.co/meetup/2/members?group_urlname=Extreme-Programmers-London&page=5&order=joined&desc=true');
+		var latestPhotosDeferred = $.getJSON('http://api.tech.unruly.co/meetup/2/photos?group_urlname=Extreme-Programmers-London&order=time&page=10');
+		var pastEventsDeferred = $.getJSON('http://api.tech.unruly.co/meetup/2/events?group_urlname=Extreme-Programmers-London&page=3&status=past&desc=true');
 
 		$.when(groupDeferred, latestMembersDeferred, latestPhotosDeferred, pastEventsDeferred).done(
 			function(groupResult, latestMembersResult, latestPhotosResult, pastEventsResult) {
