@@ -4,7 +4,7 @@ description: The VAST specification allows for quite a flexible document structu
 author: Tomas Libal
 date: 2015-10-05 14:20 UTC
 published: true
-tags: javascript, VAST, vast-parser, opensource
+tags: javascript, vast, vast-parser, opensource
 ---
 Our [vast-parser](http://tech.unruly.co/vast-parser) includes a JavaScript helper utility that aims to make working with parsed VAST documents easier. [VAST](http://www.iab.net/vast) documents allow for many optional fields and so the output JSON objects may look very differently depending on the input. Imagine accessing the following nested property in some object:
 
