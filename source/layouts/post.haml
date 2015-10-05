@@ -19,5 +19,5 @@
       .row
         .col-md-8
           %p.tag-list
-            - article.tags.each do |tag|
+            - current_article.tags.each do |tag|
               =link_to tag, "/blog/tags/#{tag}.html", :class => 'label label-info'
