@@ -1,6 +1,6 @@
 <div class="col-md-6 grid-item">
-    <a class="grid-item-anchor" href="{{url}}">
-        <div class="panel panel-default">
+    <div class="panel panel-default">
+        <a class="grid-item-anchor" href="{{projectUrl}}">
             <div class="panel-body">
                 <div class="media">
                     <span class="media-left media-middle">
@@ -17,17 +17,21 @@
                     </div>
                 </div>
             </div>
-            <div class="panel-footer">
-                {{#stars}}
+        </a>
+        <div class="panel-footer">
+            {{#fork}}
+                <span class="label label-default"><i class="fa fa-code-fork"></i></span>
+            {{/fork}}
+            {{#stars}}
+                <a href="{{repoUrl}}/stargazers">
                     <span class="label label-info"><i class="fa fa-star"></i> {{stars}}</span>
-                {{/stars}}
-                {{#fork}}
-                    <span class="label label-default"><i class="fa fa-code-fork"></i></span>
-                {{/fork}}
-                {{#badges}}
-                    <img src="{{.}}" />
-                {{/badges}}
-            </div>
+                </a>
+            {{/stars}}
+            {{#badges}}
+                <a href="{{url}}">
+                    <img src="{{image}}" />
+                </a>
+            {{/badges}}
         </div>
-    </a>
+    </div>
 </div>

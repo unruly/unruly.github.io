@@ -2,74 +2,78 @@ var pages = pages || {};
 
 pages.repositories = pages.repositories || (function() {
 
+    function init() {
+        $.get('./javascripts/partials/repo.mustache')
+            .success(addRepositories)
+            .success(addForks);
+    }
+
 	function addRepositories(template) {
-		$.getJSON('./javascripts/data/repos.json').success(function(reposConfig) {
-			$.getJSON('http://api.tech.unruly.co/github/unruly/repos').success(function(repos) {
-				var $reposContainer = $('#reposContainer');
-
-				repos.map(function(repo) {
-                        repo.pushed_at = new Date(repo.pushed_at);
-                        return repo;
-                    }).sort(function sortByUpdateDate(repoA, repoB) {
-                        return  repoB.pushed_at - repoA.pushed_at;
-                    }).forEach(function(repo) {
-                        var repoConfig = reposConfig[repo.name] || {};
-                        repo.language = repo.language || 'Mixed';
-                        repo.homepage = repo.homepage || repo.html_url;
-
-                        var repoHtml = Mustache.render(template, {
-                            name: repo.name,
-                            description: repo.description,
-                            url: repo.homepage,
-                            image: repoConfig.image,
-                            badges: repoConfig.badges,
-                            language: repo.language,
-                            language_class: repo.language.toLowerCase(),
-                            stars: repo.stargazers_count
-                        });
-
-                        $reposContainer.append(repoHtml);
-                    });
-
-                $reposContainer.find('.loading').remove();
-            });
-		});
-	}
+		$.getJSON('./javascripts/data/repos.json').success(function(configs) {
+            _createRepos('#reposContainer', template, 'http://api.tech.unruly.co/github/unruly/repos', configs);
+        });
+    }
 
     function addForks(template) {
-        $.getJSON('http://api.tech.unruly.co/github/unruly/forks').success(function(forks) {
-            var $forksContainer = $('#forksContainer');
+        _createRepos('#forksContainer', template, 'http://api.tech.unruly.co/github/unruly/forks');
+    }
 
-            forks.map(function(repo) {
+    function _createRepos(selector, template, url, configs) {
+        $.getJSON(url).success(function(repos) {
+            var $container = $(selector);
+
+            repos.map(function(repo) {
                 repo.pushed_at = new Date(repo.pushed_at);
                 return repo;
             }).sort(function sortByUpdateDate(repoA, repoB) {
                 return  repoB.pushed_at - repoA.pushed_at;
             }).forEach(function(repo) {
-                repo.language = repo.language || 'Mixed';
-                repo.homepage = repo.homepage || repo.html_url;
-
-                var repoHtml = Mustache.render(template, {
-                    name: repo.name,
-                    description: repo.description,
-                    url: repo.html_url,
-                    language: repo.language,
-                    language_class: repo.language.toLowerCase(),
-                    fork: repo.fork
-                });
-
-                $forksContainer.append(repoHtml);
+                var config = _getConfigForRepo(configs, repo);
+                var repoHtml = Mustache.render(template, _getTemplateProperties(repo, config));
+                $container.append(repoHtml);
             });
 
-            $forksContainer.find('.loading').remove();
+            $container.find('.loading').remove();
         });
     }
 
-	function init() {
-        $.get('./javascripts/partials/repo.mustache')
-            .success(addRepositories)
-            .success(addForks);
-	}
+    function _getConfigForRepo(configs, repo) {
+        configs = configs || {};
+
+        var config = configs[repo.name] || {};
+
+        if(config.badges) {
+            config.badges.filter(function(config) {
+                return !config.url;
+            }).forEach(function(config) {
+                config.url = repo.html_url;
+            });
+        }
+
+        return config;
+    }
+
+    function _getTemplateProperties(repo, config) {
+        var language = repo.language || 'Mixed';
+        var projectUrl = repo.homepage || repo.html_url;
+
+        if(repo.fork) {
+            projectUrl = repo.html_url;
+        }
+
+        return {
+            name: repo.name,
+            description: repo.description,
+            projectUrl: projectUrl,
+            repoUrl: repo.html_url,
+            image: config.image,
+            badges: config.badges,
+            language: language,
+            language_class: language.toLowerCase(),
+            stars: repo.stargazers_count,
+            fork: repo.fork
+        }
+    }
 
 	return {
 		init: init
