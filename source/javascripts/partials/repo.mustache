@@ -20,7 +20,9 @@
         </a>
         <div class="panel-footer">
             {{#fork}}
-                <span class="label label-default"><i class="fa fa-code-fork"></i></span>
+                <a href="{{repoUrl}}">
+                    <span class="label label-default"><i class="fa fa-code-fork"></i></span>
+                </a>
             {{/fork}}
             {{#stars}}
                 <a href="{{repoUrl}}/stargazers">
