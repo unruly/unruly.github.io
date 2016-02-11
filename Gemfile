@@ -2,23 +2,19 @@
 # the following line to use "http://" instead
 source 'https://rubygems.org'
 
-gem "middleman", "~>3.3.10"
-
-# Live-reloading plugin
-gem "middleman-livereload", "~> 3.1.0"
-
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
 # Windows does not come with time zone data
-gem "tzinfo-data", platforms: [:mswin, :mingw]
+gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
-gem "middleman-deploy", "~> 1.0.0"
-
-gem "rake", "~> 0.9.6"
-
-gem "middleman-blog"
-
-gem "nokogiri"
-
-gem "builder"
+# Middleman Gems
+gem 'middleman', "~> 4.1.0"
+gem 'middleman-compass', "~> 4.0.0"
+gem "middleman-minify-html", "~> 3.4.0"
+gem "middleman-livereload", "~> 3.4.0"
+gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
+gem "rake", "~> 10.5.0"
+gem "middleman-blog", "~> 4.0.0"
+gem "nokogiri", "~> 1.6.0"
+gem "builder", "~> 3.2.0"
