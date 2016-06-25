@@ -19,14 +19,7 @@ namespace :travis do
   end
 
   task :after_success do
-    puts "\nRunning Travis Deployment"
-    puts "\nSetting up Git access"
-    try "echo ${GH_TOKEN} > ./.git/credentials"
-    try "git config --global user.name ${GH_USER}"
-    try "git config --global user.email ${GH_EMAIL}"
-    try "git remote set-url origin \"https://${GH_TOKEN}@github.com/unruly/unruly.github.io.git\""
-
-    Rake::Task["deploy"].invoke
+    try "./travis-deploy.sh"
   end
 end
 

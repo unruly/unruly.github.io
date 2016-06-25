@@ -7,6 +7,10 @@ rvm:
 branches:
   only:
     - develop
+env:
+  global:
+  - GH_COMMIT_AUTHOR="Travis CI"
+  - GH_COMMIT_EMAIL=oss+travis-ci@unrulygroup.com
 script:
   - bundle exec rake travis:script
 after_success:
