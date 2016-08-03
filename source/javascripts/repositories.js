@@ -10,12 +10,12 @@ pages.repositories = pages.repositories || (function() {
 
 	function addRepositories(template) {
 		$.getJSON('./javascripts/data/repos.json').success(function(configs) {
-            _createRepos('#reposContainer', template, 'http://api.tech.unruly.co/github/unruly/repos', configs);
+            _createRepos('#reposContainer', template, 'http://tech-api.unruly.co/github/unruly/repos', configs);
         });
     }
 
     function addForks(template) {
-        _createRepos('#forksContainer', template, 'http://api.tech.unruly.co/github/unruly/forks');
+        _createRepos('#forksContainer', template, 'http://tech-api.unruly.co/github/unruly/forks');
     }
 
     function _createRepos(selector, template, url, configs) {
