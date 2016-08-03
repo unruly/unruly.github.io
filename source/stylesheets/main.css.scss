@@ -188,56 +188,8 @@ body {
     background-color: #D72132;
 }
 
-.team-description {
-
-    .team-header {
-        background: #333333;
-        padding: 10px 0 10px 15px;
-        color: white;
-        margin: 50px 0 20px;
-        position: relative;
-
-        &::after {
-            display: block;
-            background-size: auto 120px;
-            background-position: center -13px;
-            background-repeat: no-repeat;
-            width: 100px;
-            height: 100px;
-            content: " ";
-            position: absolute;
-            right: 10px;
-            bottom: 0;
-        }
-
-    }
-
-    small {
-        text-transform: uppercase;
-        color: #666666;
-    }
-
-    .tech-cloud {
-        margin: 20px 0;
-    }
-
-    &.chutney {
-        .team-header::after {
-            background-image: url("../images/bots/chutney-bot-happy.png");
-        }
-    }
-
-    &.marmalade {
-        .team-header::after {
-            background-image: url("../images/bots/marmalade-bot-happy.png");
-        }
-    }
-
-    &.tabasco {
-        .team-header::after {
-            background-image: url("../images/bots/tabasco-bot-happy.png");
-        }
-    }
+.tech-cloud {
+    margin: 20px 0;
 }
 
 .tag-list {

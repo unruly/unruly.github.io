@@ -12,18 +12,15 @@ description:
       %p= data.about.description
   .jumbotron-background{ style:"background-image: url('./images/standup.jpg')" }
 
-.container
-  - data.about.teams.each do |team|
-    %section.team-description.article-text{ class:[team.id]}
-      .row
-        %h3.team-header= team.name
-      .row
-        .col-sm-8
-          %p= team.description
-          %small Main Technologies
-          %p
-            - team.tech.each do |tech|
-              .label.label-default= tech
-        .col-sm-4
-          %img.tech-cloud.img-responsive{ src: "./images/clouds/#{team.id}-cloud.png" }
-
+.container.article-text
+  %h2 What we use
+  %p We use a wide array of technologies and it's always changing based on our needs. Here's a bunch of them.
+  .row
+    .col-md-3.col-sm-6
+      %img.tech-cloud.img-responsive{ src: "./images/clouds/chutney-cloud.png" }
+    .col-md-3.col-sm-6
+      %img.tech-cloud.img-responsive{ src: "./images/clouds/marmalade-cloud.png" }
+    .col-md-3.col-sm-6
+      %img.tech-cloud.img-responsive{ src: "./images/clouds/tabasco-cloud.png" }
+    .col-md-3.col-sm-6
+      %img.tech-cloud.img-responsive{ src: "./images/clouds/shared-cloud.png" }
