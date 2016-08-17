@@ -32,30 +32,31 @@
 	z-index: 5;
 	background-size: cover;
 	background-position: center center;
-	-webkit-filter: blur(1px);
-	-moz-filter: blur(1px);
-	filter: blur(1px);
+	-webkit-filter: grayscale(100%) brightness(40%);
+	-moz-filter: grayscale(100%) brightness(40%);
+	filter: grayscale(100%) brightness(40%);
 }
 
 .jumbotron-details {
 	position:relative;
 	z-index: 10;
-	background-color: rgba(0,0,0,0.7);
 	padding: 10px 30px;
+    text-align: center;
+    color: #ffffff;
 
-	h1 {
-		color: #ffffff;
-		text-shadow: 0 0 5px rgba(0,0,0,0.5);
-	}
-
-	h3 {
-		color: #777777;
-		text-shadow: 0 0 5px rgba(0,0,0,0.5);
-	}
+    h1 {
+        text-shadow: 3px 3px 0 black;
+    }
 
 	p {
-		color: #bbbbbb;
+        text-shadow: 2px 2px 0 black;
+        margin: 20px 0 30px;
 	}
+
+    .btn {
+        text-shadow: none;
+        box-shadow: 2px 2px 0 0 black;
+    }
 }
 
 .carousel {
