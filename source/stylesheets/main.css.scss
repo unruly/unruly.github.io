@@ -138,6 +138,7 @@ body {
 .panel-image {
     text-align: center;
     position:relative;
+
     .panel-body {
         height: 150px;
         background-size: cover;
@@ -150,15 +151,26 @@ body {
 }
 
 .panel-image-link {
+    .panel-image {
+        box-shadow: 4px 4px 0 0 #ddd;
+    }
 
     &:hover {
         text-decoration: none;
+
+        .panel-image {
+            box-shadow: 2px 2px 0 0 #eee;
+        }
+
         .panel-body {
             border-width: 5px 5px 0 5px;
             border-color: #49afcd;
             border-style: solid;
+            transition: border 0.1s;
         }
+
         .panel-heading {
+            transition: color 0.1s, background-color 0.1s;
             background-color: #49afcd;
             color: #ffffff;
         }
