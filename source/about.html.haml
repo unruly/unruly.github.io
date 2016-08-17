@@ -9,18 +9,27 @@ description:
   .container
     .jumbotron-details
       %h1 About Us
-      %p= data.about.description
   .jumbotron-background{ style:"background-image: url('./images/standup.jpg')" }
 
 .container.article-text
+  .row
+    .panel.panel-gray
+      .panel-body
+        .col-md-8
+          %h2 Who we are
+          =data.about.description
+        .col-md-4
+          %img.tech-cloud.img-responsive{ src: "./images/mob-2.jpg" }
+
+  %hr
   %h2 What we use
   %p We use a wide array of technologies and it's always changing based on our needs. Here's a bunch of them.
   .row
-    .col-md-3.col-sm-6
+    .col-md-3.col-xs-6
       %img.tech-cloud.img-responsive{ src: "./images/clouds/chutney-cloud.png" }
-    .col-md-3.col-sm-6
+    .col-md-3.col-xs-6
       %img.tech-cloud.img-responsive{ src: "./images/clouds/marmalade-cloud.png" }
-    .col-md-3.col-sm-6
+    .col-md-3.col-xs-6
       %img.tech-cloud.img-responsive{ src: "./images/clouds/tabasco-cloud.png" }
-    .col-md-3.col-sm-6
+    .col-md-3.col-xs-6
       %img.tech-cloud.img-responsive{ src: "./images/clouds/shared-cloud.png" }
