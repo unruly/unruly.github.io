@@ -1,6 +1,7 @@
 .jumbotron {
 	position:relative;
 	overflow:hidden;
+    background-color: #666666;
 }
 
 .jumbotron-title {
@@ -10,6 +11,7 @@
     .jumbotron-details {
         margin-top: 100px;
         background-color: #ffffff;
+        padding: 10px 30px;
 
         h1 {
             color: black;
@@ -37,12 +39,12 @@
 	-webkit-filter: grayscale(100%) brightness(40%);
 	-moz-filter: grayscale(100%) brightness(40%);
 	filter: grayscale(100%) brightness(40%);
+    animation: fadein 1s;
 }
 
 .jumbotron-details {
 	position:relative;
 	z-index: 10;
-	padding: 10px 30px;
     text-align: center;
     color: #ffffff;
 

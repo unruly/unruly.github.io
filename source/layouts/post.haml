@@ -3,7 +3,7 @@
     .jumbotron.jumbotron-title
       .container
         .row
-          .col-md-8.jumbotron-details
+          .jumbotron-details.col-md-10.col-md-offset-1
             %h1.page-header=current_article.title
             .post-meta.text-muted
               %time= current_article.date.strftime('%B %d, %Y')
@@ -11,13 +11,13 @@
                 • By #{current_article.data.author}
       .jumbotron-background{ style:"background-image: url('/images/jobs-banner-placeholder.jpg')" }
     .container
-      .post.col-md-8
+      .post.col-md-10.col-md-offset-1
         .post-content.article-text
           =yield
-      .col-md-4
+      .col-md-2
     .container
       .row
-        .col-md-8
+        .col-md-10.col-md-offset-1
           %p.tag-list
             - current_article.tags.each do |tag|
               =link_to tag, "/blog/tags/#{tag}.html", :class => 'label label-info'
