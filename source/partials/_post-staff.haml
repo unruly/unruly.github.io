@@ -5,9 +5,9 @@
         .row
           .col-md-12.post-meta About the Author
         .row.post__staff__details
-          -detailsColClass= "col-md-#{staff.image ? '10' : '8'}"
+          -detailsColClass= "col-xs-#{staff.image ? '10' : '8'}"
           -if staff.image
-            .col-md-2
+            .col-xs-2
               -if staff.image
                 %img.img-circle.img-thumbnail{src: staff.image}
           .post__staff__details__text{class: detailsColClass}
