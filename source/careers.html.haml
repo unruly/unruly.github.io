@@ -1,8 +1,8 @@
 ---
-title: "Jobs"
+title: "Careers"
 description: Join Unruly's development team! Be part of a diverse team working across a range of technologies.
 scripts:
-  - jobs
+  - careers
 ---
 
 .jumbotron
@@ -25,13 +25,13 @@ scripts:
       %h2 Why work with us?
     .row
       .col-md-8
-        =data.jobs.pitch
+        =data.careers.pitch
         =link_to 'about.html', class: 'btn btn-primary btn-lg' do
           More about us
       .col-md-4
         .row
-          - data.jobs.highlights.each do |highlight|
-            .col-md-12.col-sm-4{ class:["col-sm-#{(12/data.jobs.highlights.size).ceil}"] }
+          - data.careers.highlights.each do |highlight|
+            .col-md-12.col-sm-4{ class:["col-sm-#{(12/data.careers.highlights.size).ceil}"] }
               .panel.panel-default.panel-image
                 .panel-body{ style:"background-image: url('#{highlight.image}')" }
                 .panel-heading

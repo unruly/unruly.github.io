@@ -1,6 +1,6 @@
 var pages = pages || {};
 
-pages.jobs = pages.jobs || (function() {
+pages.careers = pages.careers || (function() {
 
 	function addJobs(template) {
         $.get('http://tech-api.unruly.co/rss/jobs.xml').success(function(rssDocument) {
@@ -51,4 +51,4 @@ pages.jobs = pages.jobs || (function() {
 	};
 })();
 
-pages.jobs.init();
+pages.careers.init();

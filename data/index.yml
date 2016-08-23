@@ -2,7 +2,7 @@ highlights:
   - title: We're hiring!
     description: We're looking for Java and JavaScript developers to join our growing team. Apply now!
     image: ./images/loneranger.jpg
-    link: '/jobs.html'
+    link: '/careers.html'
   - title: Dev Exchange
     description: We're looking to exchange developers with another company for a week or so to share our XP experiences. Interested?
     image: ./images/devexchange.jpg

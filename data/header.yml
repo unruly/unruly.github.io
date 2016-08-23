@@ -11,8 +11,8 @@ links:
     url: '/repositories.html'
     icon: 'code-fork'
 
-  - name: Jobs
-    url: '/jobs.html'
+  - name: Careers
+    url: '/careers.html'
     icon: 'suitcase'
 
   - name: Events
