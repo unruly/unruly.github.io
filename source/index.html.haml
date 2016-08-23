@@ -30,7 +30,7 @@ scripts:
               %time= article.date.strftime('%B %d, %Y')
               - if article.data.author
                 • By #{article.data.author}
-            .post-content.article-text
+            .post-content
               =article.summary
         %p.text-muted.text-center.hidden-sm.hidden-xs
           No more posts to list
