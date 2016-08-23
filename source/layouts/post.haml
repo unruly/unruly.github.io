@@ -14,6 +14,11 @@
       .post.post--current.col-md-10.col-md-offset-1
         .post-content.article-text
           =yield
+    -if current_article.data.original_url
+      .alert.alert-info.post__disclosure
+        .container
+          This is a copy of a post from #{current_article.data.author}'s Blog. You can view the original
+          <a href="#{current_article.data.original_url}">here <i class="fa fa-external-link"></i></a>.
     -staff = data.staff.find {|s| s.name === current_article.data.author}
     -if staff
       =partial "/partials/post-staff", :locals => { :staff => staff }
