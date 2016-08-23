@@ -22,6 +22,7 @@
     iconClass: fa-twitter
     url: https://twitter.com/pr0bablyfine
 - name: Vikki Read
+  image: https://avatars1.githubusercontent.com/u/747516
   description: Software Developer
   links:
   - name: Vikki's Blog
@@ -51,6 +52,7 @@
     iconClass: fa-twitter
     url: https://twitter.com/rachelcdavies
 - name: Benji Weber
+  image: https://avatars2.githubusercontent.com/u/211007
   description: Software Developer
   links:
   - name: Benji's Website
@@ -60,6 +62,7 @@
     iconClass: fa-twitter
     url: https://twitter.com/benjiweber
 - name: Tim Pickles
+  image: https://avatars0.githubusercontent.com/u/25707
   description: Team Lead and Software Developer
   links:
   - name: 8bit Pickles
@@ -69,6 +72,7 @@
     iconClass: fa-twitter
     url: https://twitter.com/timpickles
 - name: Imran Bohoran
+  image: https://avatars3.githubusercontent.com/u/2048844
   description: Ex-Software Developer
   links:
   - name: Imran's Blog

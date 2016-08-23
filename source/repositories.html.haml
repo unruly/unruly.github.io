@@ -8,11 +8,11 @@ scripts:
 #featuredRepo.jumbotron
   .container
     .jumbotron-details
-      %h1= data.repositories.featured.title
-      %p= data.repositories.featured.description
+      %h1= data.repositories_featured.title
+      %p= data.repositories_featured.description
       %p
-        %a.btn.btn-primary.btn-lg.link{href:data.repositories.featured.link }= data.repositories.featured.cta
-  .jumbotron-background{ style:"background-image: url('#{data.repositories.featured.image}')" }
+        %a.btn.btn-primary.btn-lg.link{href:data.repositories_featured.link }= data.repositories_featured.cta
+  .jumbotron-background{ style:"background-image: url('#{data.repositories_featured.image}')" }
 
 .container
   .page-header

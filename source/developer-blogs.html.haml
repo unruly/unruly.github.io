@@ -45,7 +45,19 @@ scripts:
       .col-md-12
         %h3 Contributors
         #contributors.row
-        %hr/
-        .row
-          .col-md-12
-            #developers.developer-container
+          - data.staff.each do |staff|
+            .grid-item.col-md-12.col-sm-6
+              .media.contributor
+                -if staff.image
+                  %span.media-left.media-middle
+                    %img.img-thumbnail.developer-image{src:staff.image}
+                .media-body.media-middle
+                  %h5.media-heading= staff.name
+                  -if staff.links
+                    .contributor-links
+                      - staff.links.each do |link|
+                        %a{href: link.url, title: link.name}
+                          -if link.iconClass
+                            %i.fa.fa-fw{class: link.iconClass}
+                          -else
+                            =link.name

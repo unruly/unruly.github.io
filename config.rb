@@ -1,5 +1,12 @@
 set :relative_links, true
 
+ignore '/templates'
+ready do
+  ["repositories"].each do |name|
+    proxy "/data/#{name}.json", "/templates/blank.html", :locals => { :content => app.send('data').send(name).to_json }
+  end
+end
+
 activate :automatic_image_sizes
 activate :relative_assets
 

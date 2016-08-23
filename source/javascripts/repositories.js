@@ -3,13 +3,13 @@ var pages = pages || {};
 pages.repositories = pages.repositories || (function() {
 
     function init() {
-        $.get('./javascripts/partials/repo.mustache')
+        $.get('/javascripts/partials/repo.mustache')
             .success(addRepositories)
             .success(addForks);
     }
 
 	function addRepositories(template) {
-		$.getJSON('./javascripts/data/repos.json').success(function(configs) {
+		$.getJSON('/data/repositories.json').success(function(configs) {
             _createRepos('#reposContainer', template, 'http://tech-api.unruly.co/github/unruly/repos', configs);
         });
     }

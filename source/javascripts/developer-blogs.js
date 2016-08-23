@@ -1,53 +1,6 @@
 var pages = pages || {};
 
 pages.developer_blogs = pages.developer_blogs || (function() {
-
-    function addContributors(template) {
-        $.getJSON('./javascripts/data/devs.json').success(function(devsConfig) {
-            $.getJSON('http://tech-api.unruly.co/github/unruly/members').success(function(members) {
-                var $contributors = $('#contributors');
-
-                members
-                    .filter(function(member) {
-                        return !!devsConfig[member.login];
-                    })
-                    .forEach(function(member) {
-                        var config = devsConfig[member.login];
-                        var contributorHtml = Mustache.render(template, {
-                            name: config.name || member.login,
-                            image: member.avatar_url,
-                            githubUrl: member.html_url,
-                            links: config ? config.links : []
-                        });
-
-                        $contributors.append(contributorHtml);
-                    });
-            });
-        });
-    }
-
-    function addDevelopers(template) {
-        $.getJSON('./javascripts/data/devs.json').success(function(devsConfig) {
-            $.getJSON('http://tech-api.unruly.co/github/unruly/members').success(function(members) {
-                var $developers = $('#developers');
-
-                members
-                    .filter(function(member) {
-                        return !devsConfig[member.login];
-                    })
-                    .forEach(function(member) {
-                        var developerHtml = Mustache.render(template, {
-                            name: member.login,
-                            image: member.avatar_url,
-                            githubUrl: member.html_url
-                        });
-
-                        $developers.append(developerHtml);
-                    });
-            });
-        });
-    }
-
     function addLatestPosts(template) {
         $.ajax({
             url: 'http://video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml',
@@ -100,8 +53,6 @@ pages.developer_blogs = pages.developer_blogs || (function() {
 
     function init() {
         $.get('./javascripts/partials/developer-post.mustache').success(addLatestPosts);
-        $.get('./javascripts/partials/contributor.mustache').success(addContributors);
-        $.get('./javascripts/partials/developer.mustache').success(addDevelopers);
     }
 
     return {
