@@ -8,9 +8,10 @@
 
 body {
 	min-width:320px;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 400;
+    line-height:1.5em;
 }
 
 .btn {
@@ -94,19 +95,19 @@ body {
 
 .post-content {
     margin: 10px 0 20px;
-    font-size: 18px;
-    line-height: 1.5em;
 
     pre {
         background: none;
         border: none;
         padding: 0;
-        font-size: 14px;
+        font-size: 16px;
         font-family: "Source Code Pro", monospace;
+        margin: 20px -30px;
 
         code {
             white-space: pre-line;
             font-family: inherit;
+            padding: 30px;
         }
     }
 
@@ -212,8 +213,36 @@ body {
 .tag-list {
     font-size: 20px;
     line-height:30px;
+
+    .label {
+        display: inline-block;
+        margin: 0 5px 2px 0;
+    }
 }
 
 .panel-gray {
     background-color: #fafafa;
+}
+
+.post__staff {
+    background-color: #fafafa;
+    padding: 50px 0;
+    margin-bottom: 50px;
+}
+
+.post__staff__details {
+    margin-top: 10px;
+}
+
+.post__staff__links {
+    margin-top: 20px;
+    .badge {
+        font-size: 1.5em;
+        border-radius: 2px;
+        margin-right: 5px;
+    }
+}
+
+.post--current {
+    margin-top: 30px;
 }

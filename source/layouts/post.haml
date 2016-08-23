@@ -11,13 +11,16 @@
                 • By #{current_article.data.author}
       .jumbotron-background{ style:"background-image: url('/images/jobs-banner-placeholder.jpg')" }
     .container
-      .post.col-md-10.col-md-offset-1
+      .post.post--current.col-md-10.col-md-offset-1
         .post-content.article-text
           =yield
-      .col-md-2
+    -staff = data.staff.find {|s| s.name === current_article.data.author}
+    -if staff
+      =partial "/partials/post-staff", :locals => { :staff => staff }
     .container
       .row
         .col-md-10.col-md-offset-1
+          .post-meta Tags
           %p.tag-list
             - current_article.tags.each do |tag|
               =link_to tag, "/blog/tags/#{tag}.html", :class => 'label label-info'

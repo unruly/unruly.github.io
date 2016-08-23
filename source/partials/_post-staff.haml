@@ -1,0 +1,23 @@
+.post__staff
+  .container
+    .row
+      .col-md-10.col-md-offset-1
+        .row
+          .col-md-12.post-meta About the Author
+        .row.post__staff__details
+          -detailsColClass= "col-md-#{staff.image ? '10' : '8'}"
+          -if staff.image
+            .col-md-2
+              -if staff.image
+                %img.img-circle.img-thumbnail{src: staff.image}
+          .post__staff__details__text{class: detailsColClass}
+            %h4= staff.name
+            %p= staff.description
+            -if staff.links
+              .post__staff__links
+                - staff.links.each do |link|
+                  %a.badge{href: link.url, title: link.name}
+                    -if link.iconClass
+                      %i.fa.fa-fw{class: link.iconClass}
+                    -else
+                      =link.name

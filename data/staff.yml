@@ -1,0 +1,79 @@
+- name: Jahed Ahmed
+  image: https://avatars3.githubusercontent.com/u/3330963
+  description: Software Developer
+  links:
+  - name: Jahed's Site
+    iconClass: fa-home
+    url: http://jahed.io
+  - name: Jahed's Twitter
+    iconClass: fa-twitter
+    url: https://twitter.com/hedjahead
+  - name: Jahed's Tumblr
+    iconClass: fa-tumblr
+    url: https://hedjahead.tumblr.com
+- name: Alex Wilson
+  description: Software Developer
+  image: https://avatars2.githubusercontent.com/u/460299
+  links:
+  - name: Alex's Blog
+    iconClass: fa-home
+    url: http://probablyfine.co.uk/
+  - name: Alex's Twitter
+    iconClass: fa-twitter
+    url: https://twitter.com/pr0bablyfine
+- name: Vikki Read
+  description: Software Developer
+  links:
+  - name: Vikki's Blog
+    iconClass: fa-home
+    url: http://vikki.github.io/
+  - name: Vikki's Twitter
+    iconClass: fa-twitter
+    url: https://twitter.com/vikkiread
+- name: Tomas Libal
+  description: Software Developer
+  image: https://avatars1.githubusercontent.com/u/1327521
+  links:
+  - name: Tomas's Blog
+    iconClass: fa-home
+    url: http://blog.libal.eu
+  - name: Tomas' Terminal
+    iconClass: fa-terminal
+    url: http://home.libal.eu
+- name: Rachel Davies
+  image: https://avatars0.githubusercontent.com/u/642331
+  description: Team Lead and Software Developer. Previously Agile Coach.
+  links:
+  - name: Thoughts on Agile Coaching
+    iconClass: fa-home
+    url: http://rachelcdavies.github.io/
+  - name: Rachel's Twitter
+    iconClass: fa-twitter
+    url: https://twitter.com/rachelcdavies
+- name: Benji Weber
+  description: Software Developer
+  links:
+  - name: Benji's Website
+    iconClass: fa-home
+    url: http://benjiweber.co.uk/
+  - name: Benji's Twitter
+    iconClass: fa-twitter
+    url: https://twitter.com/benjiweber
+- name: Tim Pickles
+  description: Team Lead and Software Developer
+  links:
+  - name: 8bit Pickles
+    iconClass: fa-home
+    url: http://www.8bitpickles.com/
+  - name: Tim's Twitter
+    iconClass: fa-twitter
+    url: https://twitter.com/timpickles
+- name: Imran Bohoran
+  description: Ex-Software Developer
+  links:
+  - name: Imran's Blog
+    iconClass: fa-home
+    url: http://imranbohoran.blogspot.co.uk/
+  - name: Imran's Twitter
+    iconClass: fa-twitter
+    url: https://twitter.com/imranbohoran
