@@ -1,0 +1,47 @@
+---
+title: "Byte-Monkey: Bytecode-level fault injection for the JVM"
+description:
+  Byte-Monkey takes inspiration from Netflix’s chaos-monkeys, which have become synonymous with fault-tolerance experiments
+  through controlled failure injection. It runs on the JVM, and twiddles the bytecode of your app to introduce the kind of failures you might encounter such as exceptions and latency.
+author: Alex Wilson
+date: 2016-05-30 12:00 UTC
+published: true
+original_url: http://probablyfine.co.uk/2016/05/30/announcing-byte-monkey/
+tags: java
+---
+
+<p>The software development community is full of memes.</p>
+
+<twitterwidget class="twitter-tweet twitter-tweet-rendered" id="twitter-widget-0" data-tweet-id="651897353889259520" style="position: static; visibility: visible; display: block; transform: rotate(0deg); width: 500px; margin: 10px auto; max-width: 100%; min-width: 220px;"></twitterwidget>
+
+<p><script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>No, not what you’d expect to find on the Reddit front-page, but instead “an idea, behavior, or style that spreads from person to person within a culture” (from <a href="https://en.wikipedia.org/wiki/Meme">Wikipedia</a>).</p>
+
+<p>Well-known software development memes include “TDD is dead”, “Java is slow”, “What’s today’s new Javascript framework/build tool?”, "MongoDB is Snapchat for databases". This project and post grew from a meme I noticed on Twitter about microservices, the gist being “you can simulate microservices by adding latency to all your method calls”.</p>
+
+<p>Hmm. That’s actually an interesting idea. Let’s do it.</p>
+
+<h2>Introducing Byte-Monkey</h2>
+
+<p><a href="https://github.com/mrwilson/byte-monkey">Byte-Monkey</a> takes inspiration from Netflix’s chaos-monkeys, which have become synonymous with fault-tolerance experiments through controlled failure injection. It runs on the JVM, and twiddles the bytecode of your app to introduce the kind of failures you might encounter such as exceptions and latency.</p>
+
+<h2>Using with a JVM app</h2>
+
+<p>Byte-Monkey is loaded as a java agent during JVM startup.</p>
+
+<pre><code>java -javaagent:byte-monkey.jar=mode:fault,rate:0.5,filter:org/eclipse/ -jar your-app.jar</code></pre>
+
+<p>The above configuration would run it in Fault mode (throw exceptions) but only instrument classes in packages under <code>org/eclipse/</code> and throw exceptions 50% of the time. More information about configuration options is on the GitHub Page</p>
+
+<h2>Why would I want to use this?</h2>
+
+<p>I've made a <a href="http://probablyfine.co.uk/2015/05/07/ghosts-in-the-pipes/">couple</a> of <a href="http://probablyfine.co.uk/2015/04/09/injecting-application-failures-in-production/">posts</a> previously about the utility of running controlled experiments to discover failure cases, at the application level or infrastructure level. Such drills give us the power and knowledge to answer questions about the behaviour of our multi-actor systems under different modes of failure.</p>
+
+<p>Byte-Monkey addresses the scenario where you want to test something inside your JVM app that may not be triggered by external factors. It lets you answer questions like "If our db connection driver started exhibiting faults every 1/10 operations, does the app release connections properly or does it cause issues?" or "What happens if our http client suddenly starts holding onto connections for an extra 100ms?"</p>
+
+<p>With Byte-Monkey, you can turn up the chance of failures occurring and see how your system behaves without having to make any adjustments to the application code itself.</p>
+
+<h2>Implementation</h2>
+
+<p>The detailed internals of how Byte-Monkey changes the application code are in the <a href="https://github.com/mrwilson/byte-monkey">Github project README</a> </p>
