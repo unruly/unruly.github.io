@@ -18,3 +18,5 @@ gem "rake", "~> 10.5.0"
 gem "middleman-blog", "~> 4.0.0"
 gem "nokogiri", "~> 1.6.0"
 gem "builder", "~> 3.2.0"
+gem 'redcarpet', '~> 3.3.0'
+

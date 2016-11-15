@@ -13,7 +13,8 @@
     .container
       .post.post--current.col-md-10.col-md-offset-1
         .post-content
-          =yield
+          =find_and_preserve do
+            =yield
     -if current_article.data.original_url
       .alert.alert-info.post__disclosure
         .container

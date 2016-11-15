@@ -31,7 +31,8 @@ scripts:
               - if article.data.author
                 • By #{article.data.author}
             .post-content
-              =article.summary
+              =find_and_preserve do
+                =article.summary
         %p.text-muted.text-center.hidden-sm.hidden-xs
           No more posts to list
     .col-md-4

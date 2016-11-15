@@ -1,4 +1,21 @@
 set :relative_links, true
+set :markdown_engine,
+    :redcarpet
+
+set :markdown,
+    # Renderer Options
+    :with_toc_data => true,
+    :safe_links_only => true,
+    # Extension Options
+    :disable_indented_code_blocks => true,
+    :fenced_code_blocks => true,
+    :strikethrough => true,
+    :smartypants => true,
+    :space_after_headers => true,
+    :superscript => true,
+    :underline => true,
+    :highlight => true,
+    :footnotes => true
 
 ignore '/templates/blank.html'
 ready do
