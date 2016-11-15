@@ -1,8 +1,13 @@
 ---
 title: Refactoring towards Functionality
+description: A stepwise examination of how to incrementally make a method increasingly functional, increasing clarity and reducing length
 author: Tom Johnson
+date: 2016-11-11
+published: true
 styles: [highlight.css, syntax.css]
+tags: java, refactoring
 ---
+
 <p>Yesterday, I refactored a method.</p>
 
 <p>Nothing unusual about that - we refactor code constantly. Code is, after all, better described as something grown than something built, and a large part of gardening is keeping the weeds in check. Normally, I wouldn’t have given it a second thought.</p>
@@ -368,7 +373,7 @@ styles: [highlight.css, syntax.css]
 <span class="o">}</span>
 </code></pre>
 </div>
-<p>And ended up with this:</p>
+<p>And, through a series of tiny steps, each improving the code in its own right, ended up with this:</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">ResponseWithMaybeDeal</span> <span class="nf">matchResponseToDeal</span><span class="o">(</span><span class="n">BidResponse</span> <span class="n">bidResponse</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">Optional</span><span class="o">&lt;</span><span class="n">UnrulySSPDeal</span><span class="o">&gt;</span> <span class="n">maybeDeal</span> <span class="o">=</span> <span class="n">getDealIdFromResponse</span><span class="o">(</span><span class="n">bidResponse</span><span class="o">).</span><span class="na">flatMap</span><span class="o">(</span><span class="k">this</span><span class="o">::</span><span class="n">findDeal</span><span class="o">);</span>
@@ -376,4 +381,7 @@ styles: [highlight.css, syntax.css]
 <span class="o">}</span>
 </code></pre>
 </div>
-<p>Seems pretty good.</p>
+
+<p>You may argue that one or two of the steps weren’t an improvement in style, in and of themselves. I’m not sure I’d agree, but I can see how you might think that. However, that’s not the point. Each of the steps were part of a gradual progression towards the final result - an implementation which is clearly, objectively better than the original.</p>
+
+<p>These refactorings aren’t just changes in style - they’re changes in form, replacing broad constructs with more restrictive ones. Each application is therefore a simplification: being we were <em>able</em> to apply them shows that our code is simpler than its original structure implies. Repeated applications of those refactorings took us to the simplest possible form, where our body does little more than restate the method name.</p>
