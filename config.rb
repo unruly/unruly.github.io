@@ -1,3 +1,5 @@
+Tilt::SYMBOL_ARRAY_SORTABLE = false
+
 set :relative_links, true
 set :markdown_engine,
     :redcarpet
