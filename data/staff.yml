@@ -81,3 +81,13 @@
   - name: Imran's Twitter
     iconClass: fa-twitter
     url: https://twitter.com/imranbohoran
+- name: Gidi Meir Morris
+  image: https://avatars1.githubusercontent.com/u/386208
+  description: Senior Software Developer
+  links:
+  - name: Gidi's ramblings
+    iconClass: fa-home
+    url: https://medium.com/@chekofif
+  - name: Gidi's Twitter
+    iconClass: fa-twitter
+    url: https://twitter.com/chekofif 
