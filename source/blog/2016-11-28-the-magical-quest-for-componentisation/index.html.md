@@ -7,7 +7,6 @@ published: true
 styles: []
 tags: javascript, react, composition, components
 ---
-# The magical quest for Componentisation
 
 I would like, if I may, to ask you an existential question.
 
