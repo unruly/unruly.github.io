@@ -231,8 +231,11 @@ Following the React core team on Twitter and Github provided true insight into h
 For example, the following thread by Sebastian Markbåge caused my brain to turn inside out at one point.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I refer to the number of components in your application layer, component layer, layout layer, rendering layer as: Horizontal surface area.</p>&mdash; Sebastian Markbåge (@sebmarkbage) <a href="https://twitter.com/sebmarkbage/status/704737113007259648">March 1, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The number of layers for a feature is: Vertical surface area. React can expand to include more verticals without growing horizontally.</p>&mdash; Sebastian Markbåge (@sebmarkbage) <a href="https://twitter.com/sebmarkbage/status/704737495448055808">March 1, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This is what will keep React from becoming a huge monolith yet get synergy effects from vertical integration. <a href="https://t.co/oukDDLw7a6">https://t.co/oukDDLw7a6</a></p>&mdash; Sebastian Markbåge (@sebmarkbage) <a href="https://twitter.com/sebmarkbage/status/704738517641920512">March 1, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 I [would](https://twitter.com/sebmarkbage) [highly](https://twitter.com/dan_abramov) [recommend](https://twitter.com/_chenglou) [following](https://twitter.com/zpao) [them](https://twitter.com/soprano) and reading the [issues on the GitHub repo](https://github.com/facebook/react/issues). I've learned alot from doing just that and I'm sure you will too.
 
