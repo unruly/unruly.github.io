@@ -2,7 +2,7 @@
 title: Free Learning
 description: A post about how we factor learning time into our work week.
 author: Rachel Davies
-date: 2016-11-25 14:20 UTC
+date: 2016-11-26 14:20 UTC
 published: true
 original_url: http://rachelcdavies.github.io/2016/11/26/free-learning.html
 tags: xp, learning
