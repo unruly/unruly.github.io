@@ -3,7 +3,7 @@ title: Building Products From the Inside-Out
 description: A post about how we gradually productionise our products by building manually configured products before introducing user interfaces.
 author: Rachel Davies
 date: 2016-11-05 14:20 UTC
-published: false
+published: true
 original_url: http://rachelcdavies.github.io/2016/11/05/building-products-inside-out.html
 tags: product, lean startup, MVP
 ---
