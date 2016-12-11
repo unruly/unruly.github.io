@@ -5,10 +5,10 @@ author: Rachel Davies
 date: 2016-11-05 14:20 UTC
 published: true
 original_url: http://rachelcdavies.github.io/2016/11/05/building-products-inside-out.html
-tags: product, lean startup, MVP
+tags: product, lean, MVP
 ---
 
-How exactly do you go about building minimum viable products following Eric Ries’s [Build-Measure-Learn](http://theleanstartup.com/principles) cycle set out in his [Lean Startup](http://theleanstartup.com/book) book? An approach you’ve probably heard about can be characterised as “Outside-In”. Start by building a interface that users can engage with and add implementation based on what you learn about their preferences from these interactions. This Outside-In technique is ideal for front-end heavy products aimed at the man-on-the-street. But what if you’re building services used by other businesses or your own?
+How exactly do you go about building minimum viable products following Eric Ries’s [Build-Measure-Learn](http://theleanstartup.com/principles) cycle set out in his [Lean Startup](http://theleanstartup.com/book) book? An approach you’ve probably heard about can be characterised as “Outside-In”. Start by building an interface that users can engage with and add implementation based on what you learn about their preferences from these interactions. This Outside-In technique is ideal for front-end heavy products aimed at the man-on-the-street. But what if you’re building services used by other businesses or your own?
 
 An alternative technique, we use at Unruly, is to build minimum viable products “Inside-Out”. We start by building just enough product to generate business value and defer building any user interface to configure these products until a later date when we know more about what’s needed. How does this work in practice? Well, we build services that are configured on the inside by developers and only make features configurable from the outside when we’re confident we know enough about what generates revenue. This approach enables us to test the market for a feature and learn more about various configurations that are needed by our business before we add controls to make these features serve-serve.
 
