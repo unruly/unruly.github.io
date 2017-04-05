@@ -14,7 +14,7 @@ Java 8 has opened the floodgates to new and exciting features that have been ant
 
 Unruly has also released some cool projects recently:
 
- * [java-8-matchers](http://tech.unruly.co/java-8-matchers) are a set of Hamcrest matchers based on new library features in Java 8 such as Streams, Optionals, and the new Time API.
+ * [java-8-matchers](https://github.com/unruly/java-8-matchers) are a set of Hamcrest matchers based on new library features in Java 8 such as Streams, Optionals, and the new Time API.
 
  * [validation](http://tech.unruly.co/validation) is inspired by languages like Scala and Rust - it allows you to treat errors in a sensible way (by manipulating a pair of <Value, Error>) but also exposing the new functional style that Java 8 brought.
 
