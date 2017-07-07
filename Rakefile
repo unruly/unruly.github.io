@@ -5,14 +5,6 @@ task :test do
   try "middleman build --verbose"
 end
 
-task :deploy do
-  puts "\nCopying GitHub-specific files"
-  try "cp -rv ./github/* ./build/"
-
-  puts "\nDeploying to GitHub"
-  try "middleman deploy"
-end
-
 namespace :travis do
   task :script do
     Rake::Task["test"].invoke

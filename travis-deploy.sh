@@ -14,11 +14,24 @@ chmod 600 deploy_key
 eval `ssh-agent -s`
 ssh-add deploy_key
 
+# Travis uses HTTPS remotes by default, switch it to SSH
 HTTPS_URL=$(git config remote.origin.url)
 SSH_URL=${HTTPS_URL/https:\/\/github.com\//git@github.com:}
-git remote set-url origin "${SSH_URL}"
 
-git config --global user.name ${GH_COMMIT_AUTHOR}
-git config --global user.email ${GH_COMMIT_EMAIL}
+echo -e "\nCopying GitHub-specific files"
+cp -rv ./github/* ./build/
 
-bundle exec rake deploy
+echo -e "\nDeploying to GitHub"
+TARGET_BRANCH="master"
+
+cd ./build
+rm -rf .git
+
+git init
+git remote git@github.com:unruly/unruly.github.io.git
+git checkout -B "${TARGET_BRANCH}"
+
+git add -A .
+git commit -m "release: Travis Build ${TRAVIS_BUILD_NUMBER}" --author "${GH_COMMIT_AUTHOR} <${GH_COMMIT_EMAIL}>"
+
+git push --force "${SSH_URL}" "${TARGET_BRANCH}"

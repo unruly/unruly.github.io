@@ -38,19 +38,19 @@ activate :blog do |blog|
   blog.layout = "post"
 end
 
-activate :deploy do |deploy|
-  deploy.deploy_method = :git
-  deploy.branch = 'master'
+# activate :deploy do |deploy|
+#   deploy.deploy_method = :git
+#   deploy.branch = 'master'
 
-  committer_app = "#{Middleman::Deploy::PACKAGE} v#{Middleman::Deploy::VERSION}"
-  commit_message = "Deployed using #{committer_app}"
+#   committer_app = "#{Middleman::Deploy::PACKAGE} v#{Middleman::Deploy::VERSION}"
+#   commit_message = "Deployed using #{committer_app}"
 
-  if ENV["TRAVIS_BUILD_NUMBER"] then
-    commit_message += " (Travis Build \##{ENV["TRAVIS_BUILD_NUMBER"]})"
-  end
+#   if ENV["TRAVIS_BUILD_NUMBER"] then
+#     commit_message += " (Travis Build \##{ENV["TRAVIS_BUILD_NUMBER"]})"
+#   end
 
-  deploy.commit_message = commit_message
-end
+#   deploy.commit_message = commit_message
+# end
 
 
 configure :development do
@@ -60,5 +60,4 @@ end
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  activate :minify_html
 end

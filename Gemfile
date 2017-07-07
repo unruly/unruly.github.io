@@ -11,12 +11,9 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 # Middleman Gems
 gem 'middleman', "~> 4.1.0"
 gem 'middleman-compass', "~> 4.0.0"
-gem "middleman-minify-html", "~> 3.4.0"
 gem "middleman-livereload", "~> 3.4.0"
-gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
 gem "rake", "~> 10.5.0"
-gem "middleman-blog", "~> 4.0.0"
+gem "middleman-blog", "~> 4.0.2"
 gem "nokogiri", "~> 1.6.0"
 gem "builder", "~> 3.2.0"
 gem 'redcarpet', '~> 3.3.0'
-
