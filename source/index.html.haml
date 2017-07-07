@@ -36,6 +36,10 @@ scripts:
         %p.text-muted.text-center.hidden-sm.hidden-xs
           No more posts to list
     .col-md-4
+      .tag-list
+        - blog.tags.each do |tag, articles|
+          =link_to tag, "./blog/tags/#{tag}.html", :class => 'label label-info'
+      %hr
       - data.index.highlights.each do |highlight|
         =link_to highlight.link, :class => 'panel-image-link' do
           .panel.panel-default.panel-image
@@ -43,12 +47,5 @@ scripts:
             .panel-heading
               %h4= highlight.title
               %p= highlight.description
-      %hr
-      %p
-        Want to know what our developers are up to? Check out their <a href="./developer-blogs.html">developer blogs</a>.
-      %hr
-      %h4 Tags
-      .tag-list
-        - blog.tags.each do |tag, articles|
-          =link_to tag, "./blog/tags/#{tag}.html", :class => 'label label-info'
+
 

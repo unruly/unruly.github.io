@@ -3,10 +3,6 @@ logo:
   icon: "images/header-logo.svg"
   text: "Unruly<strong>Tech</strong>"
 links:
-  - name: Devblogs
-    url: '/developer-blogs.html'
-    icon: 'pencil'
-
   - name: Repos
     url: '/repositories.html'
     icon: 'code-fork'
