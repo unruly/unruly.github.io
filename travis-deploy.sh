@@ -7,7 +7,7 @@ fi
 
 echo -e "\nRunning Travis Deployment"
 echo "Setting up Git Access"
-openssl aes-256-cbc -K $encrypted_0a6cc1a5146a_key -iv $encrypted_0a6cc1a5146a_iv -in deploy_key.enc -out deploy_key -d
+openssl aes-256-cbc -K "${encrypted_0a6cc1a5146a_key}" -iv "${encrypted_0a6cc1a5146a_iv}" -in deploy_key.enc -out deploy_key -d
 chmod 600 deploy_key
 
 # Add the SSH key so it's used on git commands
@@ -30,7 +30,10 @@ rm -rf .git
 git init
 git checkout -B "${TARGET_BRANCH}"
 
+git config user.name "${GH_COMMIT_AUTHOR}"
+git config user.email "${GH_COMMIT_EMAIL}"
+
 git add -A .
-git commit -m "release: Travis Build ${TRAVIS_BUILD_NUMBER}" --author "${GH_COMMIT_AUTHOR} <${GH_COMMIT_EMAIL}>"
+git commit -m "release: Travis Build ${TRAVIS_BUILD_NUMBER}"
 
 git push --force "${SSH_URL}" "${TARGET_BRANCH}"
