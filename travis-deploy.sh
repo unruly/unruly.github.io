@@ -28,7 +28,6 @@ cd ./build
 rm -rf .git
 
 git init
-git remote git@github.com:unruly/unruly.github.io.git
 git checkout -B "${TARGET_BRANCH}"
 
 git add -A .
