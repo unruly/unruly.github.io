@@ -7,7 +7,7 @@
           %span.fa.fa-bars
         = link_to '/index.html', :class => "navbar-brand unruly-logo #{data.header.logo.classname}" do
           = image_tag data.header.logo.icon, :class => 'unruly-logo-icon'
-          %span.unruly-logo-text= data.header.logo.text
+          %span.unruly-logo-text{ style:"line-height: inherit" }= data.header.logo.text
 
       .navbar-collapse.collapse#mainNavigation
         %ul.nav.navbar-nav
@@ -20,5 +20,5 @@
         %ul.nav.navbar-nav.navbar-right.hidden-sm
           %li
             %a.unruly-logo{ href:"http://unruly.co", title:"Unruly" }
-              %img.unruly-logo-icon{ src:"//video.cdn-unrulymedia-5.com/ux-guidelines/latest/images/unruly-logo.svg", alt:"Unruly" }
+              %img.unruly-logo-icon{ src:"//video.cdn-unrulymedia-5.com/ux-guidelines/latest/images/unruly-logo.svg", alt:"Unruly", style:"height: 4.5rem" }
 .header-spacer
