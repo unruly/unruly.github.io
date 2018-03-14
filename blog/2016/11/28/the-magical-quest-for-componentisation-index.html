@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang='en-gb'>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta content='2DQ01uUSCrnJiu_9vi7xriVgqtCE-Iz4SJJTC53-ih0' name='google-site-verification'>
+<title>The Magical Quest for Componentisation - Unruly Tech</title>
+<meta content='My quest to reduce code smell and achieve composable code' name='description'>
+<link href="../../../../images/product-logo.png" rel="icon" type="image/png" />
+<link href='../../../../images/branded-product-logo.png' rel='apple-touch-icon-precomposed' type='image/png'>
+<meta content='website' property='og:type'>
+<meta content='The Magical Quest for Componentisation - Unruly Tech' property='og:site_name'>
+<meta content='http://tech.unruly.co/images/branded-product-logo.png' property='og:image'>
+<meta content='My quest to reduce code smell and achieve composable code' property='og:description'>
+<meta content='summary' name='twitter:card'>
+<meta content='@unrulyco' name='twitter:site'>
+<meta content='The Magical Quest for Componentisation - Unruly Tech' name='twitter:title'>
+<meta content='My quest to reduce code smell and achieve composable code' name='twitter:description'>
+<meta content='http://tech.unruly.co/images/branded-product-logo.png' name='twitter:image'>
+<link href='/blog/feed.xml' rel='alternate' title='Unruly Tech Blog Feed' type='application/atom+xml'>
+<link href='//video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml' rel='alternate' title='Unruly Tech Developer Blog Feed' type='application/atom+xml'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://video.cdn-unrulymedia-5.com/ux-guidelines/latest/bootstrap/unruly-bootstrap.min.css?v=1" rel="stylesheet" />
+<link href="https://video.cdn-unrulymedia-5.com/ux-guidelines/latest/styles/unruly-styles.css?v=1" rel="stylesheet" />
+<link href="../../../../stylesheets/main.css" rel="stylesheet" />
+</head>
+</html>
+<body class='blog blog_2016 blog_2016_11 blog_2016_11_28 blog_2016_11_28_the-magical-quest-for-componentisation-index'>
+<nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
+<div class='container'>
+<div class='row'>
+<div class='navbar-header'>
+<button class='navbar-toggle collapsed' data-target='#mainNavigation' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='fa fa-bars'></span>
+</button>
+<a href="../../../../" class="navbar-brand unruly-logo unruly-logo-tech"><img src="../../../../images/header-logo.svg" class="unruly-logo-icon" alt="Header logo" />
+<span class='unruly-logo-text' style='line-height: inherit'>Unruly<strong>Tech</strong></span>
+</a></div>
+<div class='navbar-collapse collapse' id='mainNavigation'>
+<ul class='nav navbar-nav'>
+<li>
+<a href="../../../../repositories.html"><span class='fa fa-code-fork fa-fw'></span>
+<span>Repos</span>
+</a></li>
+<li>
+<a href="../../../../careers.html"><span class='fa fa-fw fa-suitcase'></span>
+<span>Careers</span>
+</a></li>
+<li>
+<a href="../../../../events.html"><span class='fa fa-calendar fa-fw'></span>
+<span>Events</span>
+</a></li>
+<li>
+<a href="../../../../about.html"><span>About</span>
+</a></li>
+</ul>
+<ul class='nav navbar-nav navbar-right hidden-sm'>
+<li>
+<a class='unruly-logo' href='http://unruly.co' title='Unruly'>
+<img alt='Unruly' class='unruly-logo-icon' src='//video.cdn-unrulymedia-5.com/ux-guidelines/latest/images/unruly-logo.svg' style='height: 4.5rem'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<div class='header-spacer'></div>
+
+<article>
+<div class='jumbotron jumbotron-title'>
+<div class='container'>
+<div class='row'>
+<div class='jumbotron-details col-md-10 col-md-offset-1'>
+<h1 class='page-header'>The Magical Quest for Componentisation</h1>
+<div class='post-meta text-muted'>
+<time>November 28, 2016</time>
+• By Gidi Meir Morris
+</div>
+</div>
+</div>
+</div>
+<div class='jumbotron-background' style='background-image: url(&#39;/images/jobs-banner-placeholder.jpg&#39;)'></div>
+</div>
+<div class='container'>
+<div class='post post--current col-md-10 col-md-offset-1'>
+<div class='post-content'>
+<p>I would like, if I may, to ask you an existential question.</p>
+
+<p><strong>What is the core of our job as developers today?</strong></p>
+
+<p>It probably <strong>isn&rsquo;t</strong> <em>figuring out the next super cool &amp; complex algorithm.</em></p>
+
+<p>But rather, what our job probably <strong>is</strong>, is to <em>take an existing abstraction and compose it with a second abstraction in order to form a third abstraction</em>.</p>
+
+<p>What we&rsquo;re still trying to figure out is how best to do that, right? For me, that quest began with modularisation. </p>
+
+<h2 id="modularisation">Modularisation</h2>
+
+<p>Having been focussed on the Front End over the past decade, I spent several years evangelising <em>Backbone</em> as a solution to tackling the challenge of Front End architecture. As a relatively early adopter of Backbone, in early 2011, I found the move from a messy soup of global Javascript objects with complex prototypical hierarchies, to a structured MVC (or rather, MVP) pattern an extremely pleasing step forward.</p>
+
+<p>Backbone allowed us to focus less one how the pieces of our code fit together, and more on what they actually did. This was made possible by abstracting away a lot of the boilerplate and defining a clear API for each piece of our system.
+This might seem obvious in hindsight, but at the time this felt groundbreaking, mostly because we were so used to our Javascript existing as <em>a pile of code held together by duct tape</em> that we accepted our fate and found it hard to see the potential for a better option.</p>
+
+<p>But the key <em>unique selling point</em> of Backbone, beyond removing boilerplate and an enforced API, was laying the groundwork for proper <strong>modularisation</strong> of our Javascript codebases.</p>
+
+<p>Modules are a corner stone of good code structuring, as they encourage us to break our code down into individual logical pieces. This makes it easier for us to write maintainable code that&rsquo;s easier to reason about, to test and to reuse.</p>
+
+<h2 id="rachel-39-s-trifle">Rachel&rsquo;s Trifle</h2>
+
+<p>Backbone, though, as it turned out, was not the be-all and end-all solution to our problems.</p>
+
+<p>We could definitely leverage the benefits of MVC to achieve several things, such as breaking down our architecture into multitiered Object Oriented designs, to strive for separation of concerns by layering our modules and to design inheritance chains meant to improve code reuse and reduce complexity. But it seemed we would always end up hitting the same inevitable wall.</p>
+
+<p>As a codebase would grow, requirements would changed and assumptions turned out to be incorrect, we often found that our abstractions began to fail us.</p>
+
+<p>What we would initially envision as a well thought out and layered Trifle, turned out to be more a mixed up recipe, where layers don&rsquo;t quite make sense anymore, they end up seeping into the layers above and bellow them and something just doesn&rsquo;t taste quite right anymore. This in turn makes it harder to reuse code, to test it and to maintain it.</p>
+
+<p><img src="https://media.giphy.com/media/4OW5VatORVtkI/giphy.gif" alt="Giphy" /></p>
+
+<p><em>Rachel&rsquo;s Trifle? Good.</em> <strong><em>Code Trifle</em></strong><em>? Bad.</em></p>
+
+<p>In other words, our code would develop a smell&hellip; the unmistakable smell of a Custard, Jam, Mashed Potatoes and Meat dessert.</p>
+
+<h2 id="wait-but-why">Wait, but why?</h2>
+
+<p>Einstein never actually said that <em>insanity is doing the same thing over and over again and expecting different results</em>, but I&rsquo;d like to think that he <em>would</em> agree that when we find ourselves repeating a mistake, we should probably rethink our initial approach.</p>
+
+<p>I tried to identify the root causes for why so many of the teams I&rsquo;d worked on ended up with these code smells and I narrowed them down to the following four:</p>
+
+<p><strong>Building complex and / or distributed state machines</strong>
+We often try to manage state in many different places and try to reconcile this state throughout the lifecycle of the application. This is hard to do well, and leads to many implicit assumptions which easily break.</p>
+
+<p><strong>Big bags of instruction rather than atomic declarative pipes</strong>
+Instructions may be easy to follow, but not always easy to understand. They usually describe <em>what</em> is done, rather than <em>why</em> and <em>how</em>. This means that the developers are left to figure out the <em>why</em> themselves. We&rsquo;ve all found ourselves doing this, often referring to it as <em>reverse engineering our own code</em> and we often end up misinterpreting the <em>why</em>.</p>
+
+<p><strong>Complex dependency chains reducing our ability to make atomic pieces of code</strong>
+We often find it hard to make truly atomic pieces of code as they have an inherent <em>need</em> for a piece of data or operation that is the concern of another piece of the code.
+Dependency will always exist in a complex systems, but in lieu of unified way of decoupling the dependency from its definition, you end up with strong cohesion between multiple components. This makes it extremly hard to test one component without having to build complex mocking mechanisms which are often coupled to the dependency&rsquo;s implementation, leading to frequent breakage and difficult maintainance as dependencies change over time.</p>
+
+<p><strong>Trying to predict the future</strong>
+By far the biggest culprit for the dank code smell is a habit developers have of trying to predict how their code will be used instead of focusing on what is needed. This can lead to many problematic implementations, but most of all it leads to over engineering of solutions, which often leads to code that is very hard to <em>delete</em> later.
+I&rsquo;m a firm believer that good code should be easy to delete and over engineering often makes that much harder to do.</p>
+
+<h3 id="searching-for-answers">Searching for answers</h3>
+
+<p>Having boiled down my problem to its root causes, the next step would be to figure out what I could do to reduce their impact on how I write my code.
+I believed these causes could be reduced to one core issue, which is that my code would often end up with <strong>High Efferent Coupling &amp; Fragmented State</strong>.</p>
+
+<p>Which begged the question:
+<strong><em>How on earth do we reduce our efferent coupling &amp; fragmented State?</em></strong></p>
+
+<p>Searching high and low for an answer I hit the internet, the books, the tech talks, my dad (I didn&rsquo;t literally hit my dad, I just asked his opinion, as he&rsquo;s been writing code since the 70s, presumably with hippie hair and a spliff) and found that there are infact many possible answers to this question.</p>
+
+<p>I won&rsquo;t enumerate all of them, but one answer would show up repeatedly, and that was a quote which I&rsquo;d heard many times before:</p>
+
+<p><img src="../../../2016-11-28-the-magical-quest-for-componentisation/favor.png" alt="Favor" /></p>
+
+<blockquote>
+<p><strong>Side note:</strong> <em>Note the year in which this book, considered a religious tome by many developers, was released. 1994. That&rsquo;s 22 years ago, that&rsquo;s it. If anything serves to remind us that we&rsquo;re still &ldquo;just figuring out this shit, because it&rsquo;s bloody new&rdquo;, it&rsquo;s that.</em></p>
+</blockquote>
+
+<p>In fact, this quote has been repeated so many times by so many people, I&rsquo;ve began to find it <em>eye-roll inducing</em>.</p>
+
+<p>The reason I found this quote slightly annoying was that the more I discussed this topic with experienced developers, the more it would reminde me of another quote.</p>
+
+<p><img src="../../../2016-11-28-the-magical-quest-for-componentisation/theory.png" alt="Theory" /></p>
+
+<p>While it seemed many developers appreciated the wisdom in this advice, reflected in the fact that it has been featured in innumerable talks and blog posts, very few could actually show me <em>how to achieve this</em>.</p>
+
+<p><em>Composability</em> is not an inherently clear idea, and while many developers seems perfectly capable of coding up an example in an IDE, they never seemed to actually follow through when it came to their codebase. And most annoying, they knew it, but couldn&rsquo;t quite translate this theory into practicality once they had real problems they needed to solve.</p>
+
+<h3 id="what-is-composition">What is Composition?</h3>
+
+<p>So to figure out how to achieve <em>composability</em>, we first need to understand what <em>composition</em> actually means.</p>
+
+<p>To the best of my understanding there are two kinds of composition.</p>
+
+<p>The first is <strong>functional composition</strong>. I&rsquo;ll assume for the sake of succinctness, that you already know what functional composition is, as this blog post is already way too long.</p>
+
+<p>But just to make sure we&rsquo;re on the same page I&rsquo;ll clarify that when I say functional composition, what I mean is that, in the following snippet, the <strong>h</strong> function is the <em>functional composition</em> of the <strong>g</strong> and <strong>f</strong> functions.</p>
+
+<pre><code class="js">const g = () =&gt; {}&#x000A;const f = () =&gt; {}&#x000A;&#x000A;// (g ∘ f )(x) = g(f(x))&#x000A;const h = (...args) =&gt; g(f(...args))&#x000A;</code></pre>
+
+<p>The second kind of composition is <strong>object composition</strong>, and this is where I got stuck.</p>
+
+<p>I just couldn&rsquo;t wrap my brain around how I was supposed to take the theory of Functional Composition and apply it to complex objects. How to structure the pieces of my code and make them work together without relegating back to old and smelly practices.</p>
+
+<h4 id="what-is-object-composition">What is Object Composition?</h4>
+
+<p><a href="https://twitter.com/_ericelliott">Eric Elliot</a> gave a really good talk at <a href="https://www.youtube.com/watch?v=lKCCZTUx0sI">Fluent 2013</a> in which he explains object composition and its benefits in a much better way than I ever could, so I&rsquo;d highly recommend watching his talk.</p>
+
+<p>But after experimenting with Eric&rsquo;s proposed solution, a library called <a href="https://github.com/stampit-org/stampit">StampIt</a>, I still couldn&rsquo;t see how I could avoid the high Efferent Coupling I was experiencing, nor did it do much to help me tackle the fragmented state.</p>
+
+<p>This feeling of frustration with the smell of my code would stay with me for a while, until recently, when I began using <em>React</em> in production. It wasn&rsquo;t immediately apparent to me how React seemed to alleviate many of the problems I was experiencing, nor do I want to tote React as necceserily a <em>solution</em> to these problems.</p>
+
+<p>What I have found <em>React</em> to be though, is an opportunity to alleviate many of the causes for these code smells, and that&rsquo;s the actual topic I want to talk about.</p>
+
+<h2 id="composability-via-componentisation">Composability via Componentisation</h2>
+
+<p>I often hear developers talk about the difference between the <em>react</em> package and the <em>react-dom</em> package. They seem to always focus on how the separation provides the ability to use <em>React</em>&rsquo;s top level API to define <em>loosely coupled</em> components for different Renderers and Reconciler in order to share components and logic between different target technologies. They will also discuss how the uniderectional flow of data aids in avoiding <em>fragmented state</em>. Sadly, though, it&rsquo;s much more unusual though to hear them  discuss what it is about the top level API that makes it so well suited for building such a wide variety of components with relatively low efferent coupling.</p>
+
+<p>React is often toted around as highly declarative, composable and encapsulated. In fact, these descriptions are stated on the React homepage, but no where in the documentation is it discussed what it is about React&rsquo;s API that allows for these traits. These traits are simply stated as fact.</p>
+
+<p>I guess the rest of the Javascript community is much more practical than I am, because I found myself much more concerned with <em>why</em> it worked than anyone else I talked to.</p>
+
+<h3 id="from-function-to-component">From Function to Component</h3>
+
+<p>It wasn&rsquo;t until I started analysing the React API that I got my &ldquo;AHA!&rdquo; moment.
+What I realised was that a direct parallel can be made between the API of Functional Composition and the React API. </p>
+
+<p>Lets break down the API of Functional Composition and label the different building blocks:</p>
+
+<pre><code class="js">// We&#39;ll label g() and f() as the `parent` and `child` functions&#x000A;const parent = () =&gt; {}&#x000A;const child = () =&gt; {}&#x000A;&#x000A;// we&#39;ll label the arguments for the composition as `props`&#x000A;const props = [x, y, z]&#x000A;// we&#39;ll add a little flexability by allowing the parent and child&#x000A;// to have their own arguments, and leaving it up to the parent to decide&#x000A;// what to do with the child&#x000A;const childProps = [a, b, c]&#x000A;&#x000A;const composition = (props) =&gt; parent(props, child(childProps))&#x000A;</code></pre>
+
+<p>While this might not be immediately apparent, the above composition is actually reminiscent of <em>React</em>&rsquo;s top level API. In order to see it though, we&rsquo;ll have fade away some of the layers of abstraction provided by JSX.</p>
+
+<p>If you look at the React docs you&rsquo;ll find an <a href="https://facebook.github.io/react/docs/jsx-in-depth.html">article explaining JSX&rsquo;s compilation target</a>.
+Specifically what might interest you is how the following JSX:</p>
+
+<pre><code class="js">&lt;MyButton color=&quot;blue&quot; shadowSize={2}&gt;&#x000A;  &lt;Echo value=&quot;Click Me&quot; /&gt;&#x000A;&lt;/MyButton&gt;&#x000A;</code></pre>
+
+<p>compiles to:</p>
+
+<pre><code class="js">React.createElement(&#x000A;  MyButton,&#x000A;  {color: &#39;blue&#39;, shadowSize: 2},&#x000A;  React.createElement(&#x000A;    Echo,&#x000A;    {value: &#39;Click Me&#39;}&#x000A;  )&#x000A;)&#x000A;</code></pre>
+
+<p>While it might not be apparent at first glance, this API could easily be a wrapper for the functional composition we built a couple of snippets ago.</p>
+
+<p>Lets replace the React Component references and props with the labels we defined in our snippet.</p>
+
+<pre><code class="js">React.createElement(&#x000A;  parent,&#x000A;  props,&#x000A;  React.createElement(&#x000A;    child,&#x000A;    childProps&#x000A;  )&#x000A;)&#x000A;</code></pre>
+
+<p>This might seem obvious in hindsight, but by adding a little abstraction and expanding flexibility by allowing the parent functions to have their own arguments in addition to the return values of the child functions, React has actually provided us with a highly flexible API for Object Composition.
+By defining a strict API for the communication between all pieces of your code, you achieve an ideal situation where:
+1. Every piece of your code knows how to talk to every other piece
+2. Every piece of your code can be passed as an argument to any other piece</p>
+
+<p>I tried asking a couple of members of the React core team what they would call this design pattern, but sadly never got an answer. Considering how swamped they must be with issues, emails and life, I decided not to pursue them further and simply named this design pattern thus: <strong>Componentisation</strong>.</p>
+
+<h3 id="the-rules-of-componentisation">The rules of Componentisation</h3>
+
+<p>Considering the componentisation API as a generic design pattern I defined a set of 7 rules which any library must follow in order to provide the composability I strive for:</p>
+
+<ol>
+<li><p>Every composed object must be either a Component or at most a built in type</p></li>
+<li><p>There is one parent object</p></li>
+<li><p>There can be multiple child objects</p></li>
+<li><p>A parent object can receive its own arguments (rather than being limitted to receiving the return value of child objects)</p></li>
+<li><p>child objects can receive their own arguments</p></li>
+<li><p>A parent object can interact with a single child independantly and with all children as a group</p></li>
+<li><p>A component doesn’t have to “know” its children in order to interact with them</p></li>
+</ol>
+
+<p>I believe that any library that follows these rules could, in theory, provide the high level of composability required to build complex systems without compromising on low cohesiveness and efferent coupling.</p>
+
+<h2 id="bottom-line">Bottom Line</h2>
+
+<p>The point of this article isn&rsquo;t to claim that React or Componentisation is a magical solution to all your problems.
+Rather, that Componentisation is about providing a framework (as in a basic structure, not as in a <em>Javascript Framework</em>) which can facilitate the authorship of loosely coupled code, with less code smell.</p>
+
+<p>But it is also important to keep in mind that componentisation alone cannot promise you these traits. In order to achieve these, you must first understand <em>what it is</em> about componentisation that provides them and then you need to maintain the dicipline of constantly making sure the code you author sticks to the framework and only deviates when absolutly neccesery.</p>
+
+<p>I don&rsquo;t know about you, but I find the fact that the Componentisation API is becoming so ubiquitous thanks to React, a really exciting point. It means we can start using this approach in our code, not as an <em>&ldquo;awesome in-house library that new developers need to learn&rdquo;</em> but rather a well accepted approach to modeling code, that developers coming from the React ecosystem already know how to reason about. It means we can start <strong>thinking in components</strong> throughout our codebase, not just the UI. </p>
+
+<p>And so this has been my quest for the secret of componentisation. When I set out I had no idea what I might find, if at all, and there were points where I almost gave up on the search.
+And like all good quests, this one leads to another one, a sequal if you will, to find a way to start using componentisation in more aspects of my work, not just building UIs, to which we&rsquo;ll come in a future article I&rsquo;m working on.</p>
+
+<p>In addition I&rsquo;m putting together an article in which I will present you with various design patterns we can follow with componentisation which can help you take advantage of the componentisation paradigm.</p>
+
+<p>So there&rsquo;s plenty to look forward to! </p>
+
+<h3 id="learning-more">Learning more</h3>
+
+<p>Following the React core team on Twitter and Github provided true insight into how this API is transforming the way developers are writing code since the library was introduced.</p>
+
+<p>For example, the following thread by Sebastian Markbåge caused my brain to turn inside out at one point.</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I refer to the number of components in your application layer, component layer, layout layer, rendering layer as: Horizontal surface area.</p>&mdash; Sebastian Markbåge (@sebmarkbage) <a href="https://twitter.com/sebmarkbage/status/704737113007259648">March 1, 2016</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The number of layers for a feature is: Vertical surface area. React can expand to include more verticals without growing horizontally.</p>&mdash; Sebastian Markbåge (@sebmarkbage) <a href="https://twitter.com/sebmarkbage/status/704737495448055808">March 1, 2016</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This is what will keep React from becoming a huge monolith yet get synergy effects from vertical integration. <a href="https://t.co/oukDDLw7a6">https://t.co/oukDDLw7a6</a></p>&mdash; Sebastian Markbåge (@sebmarkbage) <a href="https://twitter.com/sebmarkbage/status/704738517641920512">March 1, 2016</a></blockquote>
+
+<p>I <a href="https://twitter.com/sebmarkbage">would</a> <a href="https://twitter.com/dan_abramov">highly</a> <a href="https://twitter.com/_chenglou">recommend</a> <a href="https://twitter.com/zpao">following</a> <a href="https://twitter.com/soprano">them</a> and reading the <a href="https://github.com/facebook/react/issues">issues on the GitHub repo</a>. I&rsquo;ve learned alot from doing just that and I&rsquo;m sure you will too.</p>
+
+</div>
+</div>
+</div>
+<div class='post__staff'>
+<div class='container'>
+<div class='row'>
+<div class='col-md-10 col-md-offset-1'>
+<div class='row'>
+<div class='col-md-12 post-meta'>About the Author</div>
+</div>
+<div class='row post__staff__details'>
+<div class='col-xs-2'>
+<img class='img-circle img-thumbnail' src='https://avatars1.githubusercontent.com/u/386208'>
+</div>
+<div class='col-xs-10 post__staff__details__text'>
+<h4>Gidi Meir Morris</h4>
+<p>Senior Software Developer</p>
+<div class='post__staff__links'>
+<a class='badge' href='https://medium.com/@chekofif' title='Gidi&#39;s ramblings'>
+<i class='fa fa-fw fa-home'></i>
+</a>
+<a class='badge' href='https://twitter.com/chekofif' title='Gidi&#39;s Twitter'>
+<i class='fa fa-fw fa-twitter'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-10 col-md-offset-1'>
+<div class='post-meta'>Tags</div>
+<p class='tag-list'>
+<a href="../../../tags/javascript.html" class="label label-info">javascript</a>
+<a href="../../../tags/react.html" class="label label-info">react</a>
+<a href="../../../tags/composition.html" class="label label-info">composition</a>
+<a href="../../../tags/components.html" class="label label-info">components</a>
+</p>
+</div>
+</div>
+</div>
+</article>
+
+<footer class='footer unruly-footer'>
+<ul class='unruly-footer-nav'>
+<li>
+<a href='http://unruly.co'>&copy; 2016 Unruly</a>
+</li>
+</ul>
+</footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/jQuery.headroom.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script src="../../../../javascripts/main.js"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54623334-2', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://tech.unruly.co",
+      "logo": "http://tech.unruly.co/images/branded-product-logo.png"
+    }
+</script>
+<script type="application/ld+json">
+    {  "@context" : "http://schema.org",
+       "@type" : "WebSite",
+       "name" : "Unruly Tech",
+       "url" : "http://tech.unruly.co/"
+    }
+</script>
+</body>

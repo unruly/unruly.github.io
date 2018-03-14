@@ -1,0 +1,39 @@
+<div class="col-md-6 grid-item">
+    <div class="panel panel-default">
+        <a class="grid-item-anchor" href="{{projectUrl}}">
+            <div class="panel-body">
+                <div class="media">
+                    <span class="media-left media-middle">
+                        {{#image}}
+                            <img class="grid-item-logo grid-item-image" src="{{image}}" alt="Logo">
+                        {{/image}}
+                        {{^image}}
+                            <div class="grid-item-logo grid-item-language grid-item-language-{{language_class}}">{{language}}</div>
+                        {{/image}}
+                    </span>
+                    <div class="media-body media-middle">
+                        <h3 class="media-heading">{{name}}</h3>
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="panel-footer">
+            {{#fork}}
+                <a href="{{repoUrl}}">
+                    <span class="label label-default"><i class="fa fa-code-fork"></i></span>
+                </a>
+            {{/fork}}
+            {{#stars}}
+                <a href="{{repoUrl}}/stargazers">
+                    <span class="label label-info"><i class="fa fa-star"></i> {{stars}}</span>
+                </a>
+            {{/stars}}
+            {{#badges}}
+                <a href="{{url}}">
+                    <img src="{{image}}" />
+                </a>
+            {{/badges}}
+        </div>
+    </div>
+</div>

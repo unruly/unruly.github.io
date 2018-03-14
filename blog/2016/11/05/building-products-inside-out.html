@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang='en-gb'>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta content='2DQ01uUSCrnJiu_9vi7xriVgqtCE-Iz4SJJTC53-ih0' name='google-site-verification'>
+<title>Building Products From the Inside-Out - Unruly Tech</title>
+<meta content='A post about how we gradually productionise our products by building manually configured products before introducing user interfaces.' name='description'>
+<link href="../../../../images/product-logo.png" rel="icon" type="image/png" />
+<link href='../../../../images/branded-product-logo.png' rel='apple-touch-icon-precomposed' type='image/png'>
+<meta content='website' property='og:type'>
+<meta content='Building Products From the Inside-Out - Unruly Tech' property='og:site_name'>
+<meta content='http://tech.unruly.co/images/branded-product-logo.png' property='og:image'>
+<meta content='A post about how we gradually productionise our products by building manually configured products before introducing user interfaces.' property='og:description'>
+<meta content='summary' name='twitter:card'>
+<meta content='@unrulyco' name='twitter:site'>
+<meta content='Building Products From the Inside-Out - Unruly Tech' name='twitter:title'>
+<meta content='A post about how we gradually productionise our products by building manually configured products before introducing user interfaces.' name='twitter:description'>
+<meta content='http://tech.unruly.co/images/branded-product-logo.png' name='twitter:image'>
+<link href='/blog/feed.xml' rel='alternate' title='Unruly Tech Blog Feed' type='application/atom+xml'>
+<link href='//video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml' rel='alternate' title='Unruly Tech Developer Blog Feed' type='application/atom+xml'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://video.cdn-unrulymedia-5.com/ux-guidelines/latest/bootstrap/unruly-bootstrap.min.css?v=1" rel="stylesheet" />
+<link href="https://video.cdn-unrulymedia-5.com/ux-guidelines/latest/styles/unruly-styles.css?v=1" rel="stylesheet" />
+<link href="../../../../stylesheets/main.css" rel="stylesheet" />
+</head>
+</html>
+<body class='blog blog_2016 blog_2016_11 blog_2016_11_05 blog_2016_11_05_building-products-inside-out'>
+<nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
+<div class='container'>
+<div class='row'>
+<div class='navbar-header'>
+<button class='navbar-toggle collapsed' data-target='#mainNavigation' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='fa fa-bars'></span>
+</button>
+<a href="../../../../" class="navbar-brand unruly-logo unruly-logo-tech"><img src="../../../../images/header-logo.svg" class="unruly-logo-icon" alt="Header logo" />
+<span class='unruly-logo-text' style='line-height: inherit'>Unruly<strong>Tech</strong></span>
+</a></div>
+<div class='navbar-collapse collapse' id='mainNavigation'>
+<ul class='nav navbar-nav'>
+<li>
+<a href="../../../../repositories.html"><span class='fa fa-code-fork fa-fw'></span>
+<span>Repos</span>
+</a></li>
+<li>
+<a href="../../../../careers.html"><span class='fa fa-fw fa-suitcase'></span>
+<span>Careers</span>
+</a></li>
+<li>
+<a href="../../../../events.html"><span class='fa fa-calendar fa-fw'></span>
+<span>Events</span>
+</a></li>
+<li>
+<a href="../../../../about.html"><span>About</span>
+</a></li>
+</ul>
+<ul class='nav navbar-nav navbar-right hidden-sm'>
+<li>
+<a class='unruly-logo' href='http://unruly.co' title='Unruly'>
+<img alt='Unruly' class='unruly-logo-icon' src='//video.cdn-unrulymedia-5.com/ux-guidelines/latest/images/unruly-logo.svg' style='height: 4.5rem'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<div class='header-spacer'></div>
+
+<article>
+<div class='jumbotron jumbotron-title'>
+<div class='container'>
+<div class='row'>
+<div class='jumbotron-details col-md-10 col-md-offset-1'>
+<h1 class='page-header'>Building Products From the Inside-Out</h1>
+<div class='post-meta text-muted'>
+<time>November 05, 2016</time>
+• By Rachel Davies
+</div>
+</div>
+</div>
+</div>
+<div class='jumbotron-background' style='background-image: url(&#39;/images/jobs-banner-placeholder.jpg&#39;)'></div>
+</div>
+<div class='container'>
+<div class='post post--current col-md-10 col-md-offset-1'>
+<div class='post-content'>
+<p>How exactly do you go about building minimum viable products following Eric Ries’s <a href="http://theleanstartup.com/principles">Build-Measure-Learn</a> cycle set out in his <a href="http://theleanstartup.com/book">Lean Startup</a> book? An approach you’ve probably heard about can be characterised as “Outside-In”. Start by building an interface that users can engage with and add implementation based on what you learn about their preferences from these interactions. This Outside-In technique is ideal for front-end heavy products aimed at the man-on-the-street. But what if you’re building services used by other businesses or your own?</p>
+
+<p>An alternative technique, we use at Unruly, is to build minimum viable products “Inside-Out”. We start by building just enough product to generate business value and defer building any user interface to configure these products until a later date when we know more about what’s needed. How does this work in practice? Well, we build services that are configured on the inside by developers and only make features configurable from the outside when we’re confident we know enough about what generates revenue. This approach enables us to test the market for a feature and learn more about various configurations that are needed by our business before we add controls to make these features serve-serve.</p>
+
+<p>Here’s a simple example. Say we’re being asked by our stakeholders to introduce the capability to block ads that don’t render properly - this is valuable to our business because these ads could win slots on publisher pages but if they don’t display properly we won’t be able to charge for them. When this request comes up, we don’t know how popular this ad blocking capability will be. We may be able to pursue alternative approaches to block ads at other points in the ad serving pipeline. We may also find that such ads cannot effectively be blocked in this way, if their identities only have a short lifetime. Given this situation, it doesn’t make sense for us to invest in making a user interface to configure ad blocking yet. </p>
+
+<p>Instead, our first step is implement a minimum viable product by adding the capability to block ads using a hard-coded list of ad ids in our real-time bidding exchange. Sounds yucky but we don’t know whether it’s worth investing more time in this yet. Once this is live, we let our business teams know to send in a support ticket when they’d like to get an ad blocked. Now we wait for support tickets to trickle in.</p>
+
+<p>A couple weeks after the feature is released, we get our first support ticket requesting an ad to be blocked. The id to be blocked is added into our new list within the exchange and deployed. When the next ticket comes in, the list gets longer, this prompts a refactor to make it easier to manage the list of blocked ad ids. The day after that the original ad block is requested to be removed. Today we only have a single ad block in the exchange and so it’s definitely not worth investing in building a user interface to configure these.</p>
+
+<p>If we continue to receive more requests, the activity to block ads via this hard coded list starts to eat up developer time. We now propose a story to move the list of blocked ad ids out into a flat file that can be manually edited by our solutions engineers and pushed to our servers using a script. If editing the configuration is fiddly, we’ll invest more time in scripts to make this easier and less error prone.</p>
+
+<p>We are likely to operate ad blocking in MVP-mode for several months. When it becomes valuable enough to turn such ad blocking requests around faster, we’ll figure out a logical place to provide a user interface for our Ad Operations teams to configure this setting themselves. However, if this feature turns out not to be as valuable as anticipated, we’ll consider retiring this capability.</p>
+
+<p>Are there any gotchas with this inside-out approach to building MVP? Well, this approach adds to the <a href="https://michaelfeathers.silvrback.com/to-kill-code">carrying cost</a> of these features until they are fully productised. Some of these product features never get fully productised and the carrying cost for several months may end up as more than the implementation of fully fledged features. Our business users also end up waiting upto a day to have configuration set for them and there’s potential value lost by not being able to switch settings immediately. And yes sometimes systems feel a bit <a href="https://en.wikipedia.org/wiki/W._Heath_Robinson">Heath Robinson</a> when configuration is done in various places at the backend.</p>
+
+<p>The benefit for us, in taking an inside-out approach to building our products, is that we can get these features out of the door quickly and generate revenue quickly. Making product features available via manual configuration buys us time to figure out whether we want to invest in a proper self-serve business process around new features, that have been mooted before fully getting to grips with likely uptake and consequences.</p>
+
+<p>Building products from the inside-out can be a useful technique in situations where configuration doesn’t need to be immediate and user experience is not a major factor in doing business. It takes a little extra time for everyone to get things setup to reap the benefits from features built this way but can be a useful way to test the business impact of an idea before baking into our operations user interface.</p>
+
+</div>
+</div>
+</div>
+<div class='alert alert-info post__disclosure'>
+<div class='container'>
+This is a copy of a post from Rachel Davies's Blog. You can view the original
+<a href="http://rachelcdavies.github.io/2016/11/05/building-products-inside-out.html">here <i class="fa fa-external-link"></i></a>.
+</div>
+</div>
+<div class='post__staff'>
+<div class='container'>
+<div class='row'>
+<div class='col-md-10 col-md-offset-1'>
+<div class='row'>
+<div class='col-md-12 post-meta'>About the Author</div>
+</div>
+<div class='row post__staff__details'>
+<div class='col-xs-2'>
+<img class='img-circle img-thumbnail' src='https://avatars0.githubusercontent.com/u/642331'>
+</div>
+<div class='col-xs-10 post__staff__details__text'>
+<h4>Rachel Davies</h4>
+<p>Team Lead and Software Developer. Previously Agile Coach.</p>
+<div class='post__staff__links'>
+<a class='badge' href='http://rachelcdavies.github.io/' title='Thoughts on Agile Coaching'>
+<i class='fa fa-fw fa-home'></i>
+</a>
+<a class='badge' href='https://twitter.com/rachelcdavies' title='Rachel&#39;s Twitter'>
+<i class='fa fa-fw fa-twitter'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-10 col-md-offset-1'>
+<div class='post-meta'>Tags</div>
+<p class='tag-list'>
+<a href="../../../tags/product.html" class="label label-info">product</a>
+<a href="../../../tags/lean.html" class="label label-info">lean</a>
+<a href="/blog/tags/MVP.html" class="label label-info">MVP</a>
+</p>
+</div>
+</div>
+</div>
+</article>
+
+<footer class='footer unruly-footer'>
+<ul class='unruly-footer-nav'>
+<li>
+<a href='http://unruly.co'>&copy; 2016 Unruly</a>
+</li>
+</ul>
+</footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/jQuery.headroom.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script src="../../../../javascripts/main.js"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54623334-2', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://tech.unruly.co",
+      "logo": "http://tech.unruly.co/images/branded-product-logo.png"
+    }
+</script>
+<script type="application/ld+json">
+    {  "@context" : "http://schema.org",
+       "@type" : "WebSite",
+       "name" : "Unruly Tech",
+       "url" : "http://tech.unruly.co/"
+    }
+</script>
+</body>
