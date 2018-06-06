@@ -1,216 +1,44 @@
-<!DOCTYPE html>
-<html lang='en-gb'>
+<!DOCTYPE>
+<html>
 <head>
-<meta charset='utf-8'>
-<meta content='width=device-width, initial-scale=1' name='viewport'>
-<meta content='2DQ01uUSCrnJiu_9vi7xriVgqtCE-Iz4SJJTC53-ih0' name='google-site-verification'>
-<title>Working with parsed VAST documents - Unruly Tech</title>
-<meta content='The VAST specification allows for quite a flexible document structure and so the objects representing the file may take various form.' name='description'>
-<link href="../../../../images/product-logo.png" rel="icon" type="image/png" />
-<link href='../../../../images/branded-product-logo.png' rel='apple-touch-icon-precomposed' type='image/png'>
-<meta content='website' property='og:type'>
-<meta content='Working with parsed VAST documents - Unruly Tech' property='og:site_name'>
-<meta content='http://tech.unruly.co/images/branded-product-logo.png' property='og:image'>
-<meta content='The VAST specification allows for quite a flexible document structure and so the objects representing the file may take various form.' property='og:description'>
-<meta content='summary' name='twitter:card'>
-<meta content='@unrulyco' name='twitter:site'>
-<meta content='Working with parsed VAST documents - Unruly Tech' name='twitter:title'>
-<meta content='The VAST specification allows for quite a flexible document structure and so the objects representing the file may take various form.' name='twitter:description'>
-<meta content='http://tech.unruly.co/images/branded-product-logo.png' name='twitter:image'>
-<link href='/blog/feed.xml' rel='alternate' title='Unruly Tech Blog Feed' type='application/atom+xml'>
-<link href='//video.cdn-unrulymedia-5.com/unruly.github.io/atom.xml' rel='alternate' title='Unruly Tech Developer Blog Feed' type='application/atom+xml'>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css" rel="stylesheet" />
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-<link href="https://video.cdn-unrulymedia-5.com/ux-guidelines/latest/bootstrap/unruly-bootstrap.min.css?v=1" rel="stylesheet" />
-<link href="https://video.cdn-unrulymedia-5.com/ux-guidelines/latest/styles/unruly-styles.css?v=1" rel="stylesheet" />
-<link href="../../../../stylesheets/main.css" rel="stylesheet" />
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <meta content='Find out more about Unruly&#39;s technology stack, open source contributions and software development teams.'
+        name='description'>
+    <title>We've moved! - Unruly Engineering</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 32px 16px;
+            text-align: center;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            margin: 0.5em 0 0.2em;
+            font-size: 2em;
+        }
+
+        p {
+
+        }
+
+        img {
+            width: 256px;
+        }
+    </style>
 </head>
-</html>
-<body class='blog blog_2015 blog_2015_10 blog_2015_10_05 blog_2015_10_05_object-util'>
-<nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
-<div class='container'>
-<div class='row'>
-<div class='navbar-header'>
-<button class='navbar-toggle collapsed' data-target='#mainNavigation' data-toggle='collapse' type='button'>
-<span class='sr-only'>Toggle navigation</span>
-<span class='fa fa-bars'></span>
-</button>
-<a href="../../../../" class="navbar-brand unruly-logo unruly-logo-tech"><img src="../../../../images/header-logo.svg" class="unruly-logo-icon" alt="Header logo" />
-<span class='unruly-logo-text' style='line-height: inherit'>Unruly<strong>Tech</strong></span>
-</a></div>
-<div class='navbar-collapse collapse' id='mainNavigation'>
-<ul class='nav navbar-nav'>
-<li>
-<a href="../../../../repositories.html"><span class='fa fa-code-fork fa-fw'></span>
-<span>Repos</span>
-</a></li>
-<li>
-<a href="../../../../careers.html"><span class='fa fa-fw fa-suitcase'></span>
-<span>Careers</span>
-</a></li>
-<li>
-<a href="../../../../events.html"><span class='fa fa-calendar fa-fw'></span>
-<span>Events</span>
-</a></li>
-<li>
-<a href="../../../../about.html"><span>About</span>
-</a></li>
-</ul>
-<ul class='nav navbar-nav navbar-right hidden-sm'>
-<li>
-<a class='unruly-logo' href='http://unruly.co' title='Unruly'>
-<img alt='Unruly' class='unruly-logo-icon' src='//video.cdn-unrulymedia-5.com/ux-guidelines/latest/images/unruly-logo.svg' style='height: 4.5rem'>
-</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</nav>
-<div class='header-spacer'></div>
-
-<article>
-<div class='jumbotron jumbotron-title'>
-<div class='container'>
-<div class='row'>
-<div class='jumbotron-details col-md-10 col-md-offset-1'>
-<h1 class='page-header'>Working with parsed VAST documents</h1>
-<div class='post-meta text-muted'>
-<time>October 05, 2015</time>
-• By Tomas Libal
-</div>
-</div>
-</div>
-</div>
-<div class='jumbotron-background' style='background-image: url(&#39;/images/jobs-banner-placeholder.jpg&#39;)'></div>
-</div>
-<div class='container'>
-<div class='post post--current col-md-10 col-md-offset-1'>
-<div class='post-content'>
-<p>Our <a href="http://tech.unruly.co/vast-parser">vast-parser</a> includes a JavaScript helper utility that aims to make working with parsed VAST documents easier. <a href="http://www.iab.net/vast">VAST</a> documents allow for many optional fields and so the output JSON objects may look very differently depending on the input. Imagine accessing the following nested property in some object:</p>
-
-<pre><code class="js">let linearCreative = VAST.Ad.InLine.Creatives.Creative.Linear;&#x000A;</code></pre>
-
-<p>If any property before <em>Linear</em> does not exist then this expression will throw a TypeError because the interpreter will try to read a property on something which is undefined.</p>
-
-<p>With the <em>objectUtil</em> we can safely read any property using one of the util&rsquo;s static methods:</p>
-
-<pre><code class="js">let val = objectUtil.getFromObjectPath(foo, &#39;VAST.Ad.InLine.Creatives.Creative.Linear&#39;);&#x000A;</code></pre>
-
-<p>The first argument <em>foo</em> is an object storing the parsed VAST document and the second argument is &ldquo;the lookup path&rdquo; using the standard JSON/JavaScript access notation. This path will be recursively traversed from left to right, until either one of the properties is undefined in which case null is returned or the last property is found and its value is returned.</p>
-
-<h2 id="the-39-interface-39">The &lsquo;interface&rsquo;</h2>
-
-<pre><code class="js">ObjectUtil.getFromObjectPath(object={}, path=&#39;&#39;, defaultValue=null);&#x000A;</code></pre>
-
-<p>Reads from the <em>object</em> using the given <em>path</em> and returns the value of the property specified by the <em>path</em> or if not found, returns the <em>defaultValue</em> (null if not specified).</p>
-
-<pre><code class="js">ObjectUtil.getIntegerFromObjectPath(object={}, path=&#39;&#39;, defaultValue=null);&#x000A;</code></pre>
-
-<p>Same as above but converts the found value to an integer.</p>
-
-<pre><code class="js">ObjectUtil.getArrayFromObjectPath(object={}, path=&#39;&#39;);&#x000A;</code></pre>
-
-<p>Similar to the first method but sets the <em>defaultValue = [ ]</em> and if the found value is not an array, it wraps it into an array before returning it.</p>
-
-<h2 id="head-tail-traversal">Head, tail traversal</h2>
-
-<p>The lookup happens by splitting the path by the fullstop character and setting <code>head</code> and <code>tail</code> variables to the first part of the path and the rest respectively.
-In an example:</p>
-
-<pre><code>obj={...}, path=&#39;VAST.Ad.InLine.Creatives.Creative.Linear&#39;&#x000A;&#x000A;1. head=obj[&#39;VAST&#39;], tail=[&#39;Ad&#39;, &#39;InLine&#39;, &#39;Creatives&#39;, &#39;Creative&#39;, &#39;Linear&#39;]&#x000A;2. head=head[&#39;Ad&#39;], tail=[&#39;InLine&#39;, &#39;Creatives&#39;, &#39;Creative&#39;, &#39;Linear&#39;]&#x000A;3. head=head[&#39;InLine&#39;], tail=[&#39;Creatives&#39;, &#39;Creative&#39;, &#39;Linear&#39;]&#x000A;4. head=head[&#39;Creatives&#39;], tail=[&#39;Creative&#39;, &#39;Linear&#39;]&#x000A;5. head=head[&#39;Creative&#39;], tail=[&#39;Linear&#39;]&#x000A;</code></pre>
-
-<p>In each step, <code>head</code> is checked to be defined. If true, the code proceeds with updating <code>head</code> and <code>tail</code> values as illustrated in the above example until the tail&rsquo;s length is 1 when it returns <code>head[tail[0]]</code>. If head is undefined at any point, the <code>defaultValue</code> is returned.</p>
-
-<h2 id="github-repository-and-documentation">GitHub repository and documentation</h2>
-
-<p>We have open sourced the vast-parser project <a href="https://github.com/unruly/vast-parser">on Github</a>. It currently supports VAST 3.0 specification.</p>
-
-</div>
-</div>
-</div>
-<div class='post__staff'>
-<div class='container'>
-<div class='row'>
-<div class='col-md-10 col-md-offset-1'>
-<div class='row'>
-<div class='col-md-12 post-meta'>About the Author</div>
-</div>
-<div class='row post__staff__details'>
-<div class='col-xs-2'>
-<img class='img-circle img-thumbnail' src='https://avatars1.githubusercontent.com/u/1327521'>
-</div>
-<div class='col-xs-10 post__staff__details__text'>
-<h4>Tomas Libal</h4>
-<p>Software Developer</p>
-<div class='post__staff__links'>
-<a class='badge' href='http://blog.libal.eu' title='Tomas&#39;s Blog'>
-<i class='fa fa-fw fa-home'></i>
-</a>
-<a class='badge' href='http://home.libal.eu' title='Tomas&#39; Terminal'>
-<i class='fa fa-fw fa-terminal'></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class='container'>
-<div class='row'>
-<div class='col-md-10 col-md-offset-1'>
-<div class='post-meta'>Tags</div>
-<p class='tag-list'>
-<a href="../../../tags/javascript.html" class="label label-info">javascript</a>
-<a href="../../../tags/vast.html" class="label label-info">vast</a>
-<a href="../../../tags/vast-parser.html" class="label label-info">vast-parser</a>
-<a href="../../../tags/opensource.html" class="label label-info">opensource</a>
+<body>
+<img src="https://avatars0.githubusercontent.com/u/7168075" alt="" width="256" />
+<h1>Unruly Engineering</h1>
+<p>
+    We've moved! You can find us on <a href="https://medium.com/unruly-engineering">Medium</a>
+    and <a href="https://github.com/unruly">GitHub</a>.
 </p>
-</div>
-</div>
-</div>
-</article>
-
-<footer class='footer unruly-footer'>
-<ul class='unruly-footer-nav'>
-<li>
-<a href='http://unruly.co'>&copy; 2016 Unruly</a>
-</li>
-</ul>
-</footer>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/jQuery.headroom.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-<script src="../../../../javascripts/main.js"></script>
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-54623334-2', 'auto');
-    ga('send', 'pageview');
-</script>
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "http://tech.unruly.co",
-      "logo": "http://tech.unruly.co/images/branded-product-logo.png"
-    }
-</script>
-<script type="application/ld+json">
-    {  "@context" : "http://schema.org",
-       "@type" : "WebSite",
-       "name" : "Unruly Tech",
-       "url" : "http://tech.unruly.co/"
-    }
-</script>
 </body>
+</html>
